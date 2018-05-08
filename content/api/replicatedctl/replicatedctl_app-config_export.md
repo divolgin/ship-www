@@ -1,0 +1,42 @@
+---
+aliases:
+- docs/reference/replicatedctl/replicatedctl_app-config_export
+categories:
+- replicatedctl
+date: 2018-02-20T00:45:55Z
+description: Export app config settings
+index: docs
+title: replicatedctl app-config export
+weight: "551"
+gradient: "purpleToPink"
+---
+
+## replicatedctl app-config export
+
+Export app config settings
+
+### Synopsis
+
+
+Export app config settings
+
+```
+replicatedctl app-config export
+```
+
+### Options
+
+```
+  -o, --output string     Output format. One of: json|yaml
+      --template string   Format the output using the given Go template
+```
+
+### Options inherited from parent commands
+
+```
+      --host string   Replicated API host (default "unix:///var/run/replicated/replicated-cli.sock")
+```
+
+### SEE ALSO
+* [replicatedctl app-config](/api/replicatedctl/replicatedctl_app-config/)	 - Manage app config
+
