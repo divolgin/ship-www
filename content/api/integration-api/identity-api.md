@@ -1,0 +1,200 @@
+---
+date: "2016-07-03T04:12:27Z"
+title: "Identity API"
+description: "Provides authentication with identity servers"
+weight: "555"
+categories: [ "Integration API" ]
+index: "docs"
+gradient: "purpleToPink"
+aliases : [docs/reference/integration-api/identity-api]
+---
+
+{{< linked_headline "About the Identity API" >}}
+
+The Identity API provides synchronous authentication with an identity server, often a corporate LDAP or Active Directory (AD) service. In this model, login requests are made to the Replicated Integration API, which validates the credentials provided against the identity service. Applications using the Identity API rely on the upstream identity provider for local identity.
+
+{{< linked_headline "API Methods" >}}
+
+The Identity API is part of the Integration API. To discover the Integration API base endpoint, query the `REPLICATED_INTEGRATIONAPI` environment variable from inside your container.
+
+{{< linked_headline "LDAP Authentication" >}}
+
+### GET /identity/v1/sources
+
+Lists identity sources.
+
+Response
+
+| Status | Description |
+| ------ | ----------- |
+| 200    | Sucess      |
+
+In case 200 is returned, the body of the response will contain a listing of enabled identity sources.
+
+#### Examples
+
+cURL
+
+```bash
+$ curl -k -i $REPLICATED_INTEGRATIONAPI/identity/v1/sources"
+HTTP/1.1 200 OK
+Content-Length: 158
+Content-Type: application/json; charset=utf-8
+Date: Tue, 12 Sep 2017 03:19:11 GMT
+
+{
+    "sources": [
+        {
+            "base_dn": "dc=replicated,dc=com",
+            "hostname": "openldap.replicated.com"
+        },
+        {
+            "base_dn": "DC=ad,DC=replicated,DC=com",
+            "hostname": "ad.replicated.com"
+        }
+    ]
+}
+```
+
+### POST /identity/v1/login
+
+Authenticates the user and returns the corresponding entry properties.
+
+Request payload
+
+| Name     | Type   | Description                                   |
+| -------- | ------ | --------------------------------------------- |
+| username | String | As defined by the ldap_username_field setting |
+| password | String | Cleartext password                            |
+
+Query parameters
+
+| Name        | Type   | Description                  |
+| ----------- | ------ | ---------------------------- |
+| hostname \* | String | Hostname for the LDAP server |
+| base_dn \*  | String | Base DN for the LDAP server  |
+
+_\* required when identity is configured with multiple sources_
+
+Response
+
+| Status | Description                     |
+| ------ | ------------------------------- |
+| 200    | User authenticated successfully |
+| 401    | Invalid username or password    |
+
+In case 200 is returned, the body of the response will contain LDAP properties for the authenticated user entry. The password attribute will be omitted from the result.
+
+Response body
+
+| Name       | Type   | Description                                                                                                 |
+| ---------- | ------ | ----------------------------------------------------------------------------------------------------------- |
+| DN         | String | LDAP DN for the user's entry                                                                                |
+| Username   | String | Username                                                                                                    |
+| Attributes | Array  | An array of available LDAP attributes for the user's entry, including any custom attributes for the user.   |
+| Groups     | Array  | Array of groups that the user belongs to. Each group contains group's DN and a list of its LDAP attributes. |
+
+#### Example
+
+Note that the response JSON has been prettified for easier reading.
+
+cURL
+
+```bash
+{
+  "DN": "cn=Test User,ou=users,dc=replicated,dc=com",
+  "Username": "testuser",
+  "Groups": [{
+    "DN": "cn=replicated,ou=groups,dc=replicated,dc=com",
+    "ID": "501",
+    "Name": "replicated",
+    "Attributes": {
+      "cn": ["replicated"],
+      "gidnumber": ["501"],
+      "memberuid": ["testuser", "testuser2", "testuser3", "testuser4"],
+      "objectclass": ["posixGroup", "top"]
+    }
+  }],
+  "Attributes": {
+    "cn": ["Test User"],
+    "gidnumber": ["500"],
+    "givenname": ["Test"],
+    "homedirectory": ["/home/users/testuser"],
+    "objectclass": ["inetOrgPerson", "posixAccount", "top"],
+    "sn": ["User"],
+    "uid": ["testuser"],
+    "uidnumber": ["1005"]
+  }
+}
+```
+
+### GET /identity/v1/user/:username
+
+Returns properties for the specified user.
+
+Query parameters
+
+| Name        | Type   | Description                  |
+| ----------- | ------ | ---------------------------- |
+| hostname \* | String | Hostname for the LDAP server |
+| base_dn \*  | String | Base DN for the LDAP server  |
+
+_\* required when identity is configured with multiple sources_
+
+Response
+
+| Status | Description                                         |
+| ------ | --------------------------------------------------- |
+| 200    | User authenticated successfully                     |
+| 401    | Invalid username or password (for LDAP search user) |
+| 404    | Requested user is not found                         |
+
+In case 200 is returned, the body of the response is the same as that of the /identity/v1/login call.
+
+### GET /identity/v1/user/:username/exists
+
+Checks if the supplied username exists on the server and returns true or false.
+
+In case 200 is returned, the body of the response will be true if the user exists or false otherwise.
+
+Query parameters
+
+| Name        | Type   | Description                  |
+| ----------- | ------ | ---------------------------- |
+| hostname \* | String | Hostname for the LDAP server |
+| base_dn \*  | String | Base DN for the LDAP server  |
+
+_\* required when identity is configured with multiple sources_
+
+Response
+
+| Status | Description                  |
+| ------ | ---------------------------- |
+| 200    | Check completed successfully |
+| 401    | Invalid username or password |
+
+#### Examples
+
+cURL
+
+```bash
+$ curl -k -i $REPLICATED_INTEGRATIONAPI/identity/v1/user/jdoe/exists
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 14 Oct 2015 19:00:30 GMT
+Content-Length: 4
+
+true
+```
+
+cURL
+
+```bash
+$ curl -k -i $REPLICATED_INTEGRATIONAPI/identity/v1/user/badusername/exists
+HTTP/1.1 200 OK
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 14 Oct 2015 19:00:30 GMT
+Content-Length: 5
+
+false
+```
