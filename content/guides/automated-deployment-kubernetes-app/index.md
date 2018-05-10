@@ -2,7 +2,7 @@
   title: "Automated Deployment of a Kubernetes Application"
   description: "Automated deploymwnt of a kubernetes application"
   level: "shipGuide"
-  gradient: "console"
+  gradient: "greenToGreen"
   icon: "replicatedCircle"
   index: false
   chapters:
