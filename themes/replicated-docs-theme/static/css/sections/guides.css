@@ -52,6 +52,23 @@
 .single .right-block {
   margin-top: 40px;
 }
+.single .sidebar #TableOfContents {
+  position: inherit;
+  display: flex;
+  padding: 0;
+}
+.single .sidebar #TableOfContents ul {
+  display: flex;
+  flex-direction: column;
+}
+.single .sidebar #TableOfContents ul li a {
+  padding: 0;
+  font-weight: 500;
+  color: #2A98CB;
+}
+.single .sidebar #TableOfContents ul li {
+  padding: 10px 0;
+}
 
 .guide-chapters-wrapper ul {
   counter-reset: list;
