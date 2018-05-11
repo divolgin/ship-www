@@ -69,7 +69,12 @@
 .single .sidebar #TableOfContents ul li {
   padding: 10px 0;
 }
-
+.single .resources li {
+  padding: 6px 0;
+}
+.single .resources li a:visited {
+  color: #2A98CB;
+}
 .guide-chapters-wrapper ul {
   counter-reset: list;
 }

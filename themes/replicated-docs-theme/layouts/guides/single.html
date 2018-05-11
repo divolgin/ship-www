@@ -33,7 +33,20 @@
                             <div>
                                 <h3 class="u-fontWeight--medium u-borderBottom--gray u-lineHeight--normal u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
                                 {{ .TableOfContents }}
-                            </div>
+							</div>
+							{{ with .Params.resources }}
+								<div class="resources u-marginTop--most">
+									<h3 class="u-fontWeight--medium u-borderBottom--gray u-lineHeight--normal u-paddingBottom--normal u-marginBottom--normal">Resources</h3>
+									<p class="u-fontSize--small u-color--dustyGray u-lineHeight--normal">Here are some resources we’ve prepared for this guide.</p>
+									<ul class="u-marginTop--small">
+										{{ range . }}
+											<li>
+												<a href="{{ .path }}" class="u-color--astral u-fontSize--small" target="_blank">{{ .name }}</a>
+											</li>
+										{{ end }}
+									</ul>
+								</div>
+							{{ end }}
                         </div>
                     </div>
                     <div class="flex1 page-content-wrapper">
