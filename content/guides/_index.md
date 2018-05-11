@@ -32,4 +32,8 @@ guides:
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
     level: "replicatedCircle"
     slug: "deploying-manually"
+  - title: "Automated Testing"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+    level: "replicatedCircle"
+    slug: "automated-testing"
 ---
