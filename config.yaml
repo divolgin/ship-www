@@ -46,7 +46,7 @@ menu:
       URL: "/guides/"
     - Name: "Documentation"
       Weight: 2
-      URL: "/docs/native/getting-started/overview/"
+      URL: "https://help.replicated.com/docs/ship"
     - Name: "Resources"
       Weight: 3
       URL: "/api/"
