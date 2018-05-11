@@ -4,6 +4,11 @@ title: "Automated Deployment with a Kubenretes App"
 description: "Automated Deployment with a Kubenretes App"
 weight: "30003"
 gradient: "greenToGreen"
+resources: 
+    - title: "ship_spec.yaml"
+      src: "ship_spec.yaml"
+    - title: "circle.config"
+      src: "circle.config"
 ---
 
 # Header 1
