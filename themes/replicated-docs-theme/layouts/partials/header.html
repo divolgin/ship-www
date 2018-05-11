@@ -41,10 +41,10 @@
 		<nav>
 			<div class="container u-position--relative">
 				<span id="toggleNav" class="u-show--mobileTablet icon u-cursor--pointer"></span>
-				<ul class="nav-list paddingContainer u-position--relative">
+				<ul class="flex justifyContent--spaceBetween alignItems--center nav-list paddingContainer u-position--relative">
 					<li>
 						<a class="logo-link" href="{{ .Site.BaseURL }}">
-							<img width="109" src="{{ .Site.BaseURL }}images/logo@2x.png"/>
+							<img width="109" src="{{ .Site.BaseURL }}images/ship-logo@2x.png"/>
 						</a>
 					</li>
 					<li>
@@ -52,10 +52,6 @@
 							{{ range .Site.Menus.main }}
 								<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 							{{ end }}
-							<li class="log-in-link">
-								<span><a href="https://vendor.replicated.com" target="_blank">Log in</a></span>
-								<!-- <span><a class="upload-button" href="/support">Upload support bundle</a></span> -->
-							</li>
 						</ul>
 					</li>
 				</ul>
