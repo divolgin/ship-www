@@ -34,7 +34,6 @@
                 <div class="u-flexTabletReflow flex1">
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
-                            <div>
                                 {{ if .Params.categories }}
                                     <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ replace (index (.Params.categories) 0 | title) "-" " " }}</h3>
                                     <ul>
@@ -52,7 +51,6 @@
                                     {{ end }}
                                     </ul>
                                 {{ end }}
-                            </div>
                         </div>
                     </div>
                     <div class="flex1 page-content-wrapper">

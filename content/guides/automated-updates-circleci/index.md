@@ -10,9 +10,6 @@ resources:
     - title: "circle.config"
       src: "resources/circle.config"
 ---
-
-# Automated Updates with CircleCI
-
 CircleCI (and CircleCI Enterprise) workflows can be used to automatically deploy updates to a Ship application when there's an update available.
 
 This document will walk through setting up an automated process to update an already-deployed Ship application whenever an update is available. The end result here is two environments running the application; one for testing and validation, and one for production. The process defined here will automatically deploy to the test environment, and then deploy to production when the tests pass.

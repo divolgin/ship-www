@@ -10,9 +10,6 @@ resources:
     - title: "circle.config"
       src: "resources/circle.config"
 ---
-
-# Manage State
-
 When a Replicated Ship application is initially configured, a state file is created and stored in `.ship/state.json`. This file contains all generated and manually entered values from the initial setup. When an upgrade is available for the application, the state file is read and applied to the new update. This is a useful way to install application updates.
 
 ## Secrets in State

@@ -17,7 +17,7 @@
                         <div class="tags">
                             <ul>
                                 {{ range .Params.tags }}
-                                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+                                    <li> <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
                                 {{ end }}
                             </ul>
                         </div>
@@ -30,18 +30,18 @@
                 <div class="u-flexTabletReflow flex1">
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
-                            <div class="toc">
+                            <div class="toc u-marginBottom--most">
                                 <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
-                                {{ .TableOfContents }}
+																	{{ .TableOfContents }}
                             </div>
-                            <br> <br>
+
                             {{ with .Params.resources }}
                                 <div class="resources">
                                     <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">Resources</h3>
                                     <p class="u-fontSize--normal u-fontWeight--medium u-color--dustyGray u-marginTop--normal u-lineHeight--normal u-marginBottom--normal"> Here are some resources we've prepared for this guide.</p>
                                     <ul>
                                         {{ range . }}
-                                            <li><a href="{{ .src | urlize }}">{{ .title }}</a> </li>
+                                            <li> <a href="{{ .src | urlize }}">{{ .title }}</a> </li>
                                         {{ end }}
                                     </ul>
                                 </div>
