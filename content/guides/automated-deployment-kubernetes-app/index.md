@@ -10,10 +10,6 @@ resources:
     - title: "circle.config"
       src: "resources/circle.config"
 ---
-
-
-# Automated Deployment of a Kubernetes Application
-
 Kubernetes applications delivered in Replocated Ship can be deployed using automation instead of manually running `kubectl` to deploy from a laptop. It's possible to deploy the first release of an application completely automated, even to airgapped environmnets. This document walks through an example application and how it will be configured and initially deployed.
 
 ## Prerequisites

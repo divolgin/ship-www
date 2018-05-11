@@ -10,9 +10,6 @@ resources:
     - title: "circle.config"
       src: "resources/circle.config"
 ---
-
-# Initial Configuration
-
 While applications delivered in Replicated Ship can be initially configured in a fully automated way, nfiguratint's common to create the initial configuration manully, then building a audited, workflow-driven process to automate deployment and future updates. When getting started configuring and deplying an unfamiliar application, it's common to start with some easy-to-use tools to help bootstrap the process.
 
 A good practice is to run the `replicated/ship` process on a laptop to walk through the initial configuration process, and create the assets. Ship provides a web-based UI that runs locally (in Docker) to make this process similar across any application.

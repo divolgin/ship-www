@@ -60,17 +60,26 @@
 .single .sidebar #TableOfContents ul {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 .single .sidebar #TableOfContents ul li a {
   padding: 0;
   font-weight: 500;
   color: #2A98CB;
 }
-.single .sidebar #TableOfContents ul li {
-  padding: 10px 0;
+/* First ul */
+.single .sidebar #TableOfContents ul {
+  padding: 0px;
+}
+.single .sidebar #TableOfContents > ul li:first-of-type {
+  padding-top: 5px;
+}
+.single .sidebar #TableOfContents ul li ul {
+  padding-left: 10px;
+  padding-top: 5px;
 }
 .single .resources li {
-  padding: 6px 0;
+  padding: 6px 0 0 0;
 }
 .single .resources li a:visited {
   color: #2A98CB;
