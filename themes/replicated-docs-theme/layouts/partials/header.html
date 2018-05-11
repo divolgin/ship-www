@@ -38,7 +38,11 @@
 </head>
 <body>
 	<header>
-		<nav>
+		{{ if eq .Params.type "home" }}
+		   <nav class="home-nav">
+		{{ else }}
+			<nav class="other-nav">
+		{{ end }}
 			<div class="container u-position--relative">
 				<span id="toggleNav" class="u-show--mobileTablet icon u-cursor--pointer"></span>
 				<ul class="flex justifyContent--spaceBetween alignItems--center nav-list paddingContainer u-position--relative">
