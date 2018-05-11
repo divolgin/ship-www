@@ -4,12 +4,10 @@ install:
 	yarn
 
 build:
-	`npm bin`/browserify static/js/supportBundleUpload.js > static/js/supportBundleUpload.bundled.js
 	yarn gulp
 	hugo -v
 
 build_staging:
-	`npm bin`/browserify static/js/supportBundleUpload.js > static/js/supportBundleUpload.bundled.js
 	yarn gulp
 	hugo -v --config config.staging.yaml
 

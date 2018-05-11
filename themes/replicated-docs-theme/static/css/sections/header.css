@@ -1,3 +1,6 @@
+nav.home-nav {
+  background: #4cbf6c;
+}
 nav {
   background: #2A98CB;
   padding: 15px 0 13px;
@@ -116,7 +119,7 @@ nav ul ul.show {
 @media screen and (min-width: 48em) {
   nav {
     position: absolute;
-    background: rgba(255,255,255,1);
+    background: rgba(255,255,255,.2);
   }
   nav ul li {
     display: inline-block;
@@ -136,16 +139,17 @@ nav ul ul.show {
     margin-right: 0;
   }
   nav ul li a {
-    color: rgba(74,74,74,100);
+    color:rgba(255,255,255,.8);
     font-weight: 400;
     font-size: 14px;
     -webkit-transition: color .2s;
     -moz-transition: color .2s;
     transition: color .2s;
+    cursor: pointer;
   }
   nav li ul a:hover {
-    color: rgba(74,74,74,100);
-    font-weight: bold;
+    color:rgba(255,255,255,1);
+    font-weight: 400;
   }
   nav ul ul.header-links {
     display: inline-block;
