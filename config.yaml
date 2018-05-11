@@ -47,10 +47,7 @@ menu:
     - Name: "Documentation"
       Weight: 2
       URL: "/docs/native/getting-started/overview/"
-    - Name: "API Reference"
+    - Name: "Resources"
       Weight: 3
       URL: "/api/"
-    - Name: "Community"
-      Weight: 3
-      URL: "https://help.replicated.com/community/"
 ---
