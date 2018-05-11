@@ -117,6 +117,11 @@
 .guide-chapters-wrapper li a:hover .chapter-title {
   color: #2A98CB;
 }
+.resources a {
+  padding: 0;
+  font-weight: 500;
+  color: #2A98CB;
+}
 
 /* ≥ 568px */
 @media screen and (min-width: 35.5em) {

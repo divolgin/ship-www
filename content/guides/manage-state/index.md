@@ -4,6 +4,11 @@ title: "Managing State"
 description: "This is a test chapter and doesn't have any content"
 weight: "30003"
 gradient: "greenToGreen"
+resources: 
+    - title: "ship_spec.yaml"
+      src: "resources/ship_spec.yaml"
+    - title: "circle.config"
+      src: "resources/circle.config"
 ---
 
 # Manage State

@@ -4,6 +4,11 @@ title: "Deploying Manually"
 description: "Deploying Manually"
 weight: "30003"
 gradient: "greenToGreen"
+resources: 
+    - title: "ship_spec.yaml"
+      src: "resources/ship_spec.yaml"
+    - title: "circle.config"
+      src: "resources/circle.config"
 ---
 
 # Header 1
