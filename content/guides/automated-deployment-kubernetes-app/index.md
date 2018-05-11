@@ -6,9 +6,9 @@ weight: "30003"
 gradient: "greenToGreen"
 resources: 
     - title: "ship_spec.yaml"
-      src: "ship_spec.yaml"
+      src: "resources/ship_spec.yaml"
     - title: "circle.config"
-      src: "circle.config"
+      src: "resources/circle.config"
 ---
 
 # Header 1

@@ -4,6 +4,11 @@ title: "Automated Updates with CircleCI"
 description: "Automated Updates with CircleCI"
 weight: "30003"
 gradient: "greenToGreen"
+resources: 
+    - title: "ship_spec.yaml"
+      src: "resources/ship_spec.yaml"
+    - title: "circle.config"
+      src: "resources/circle.config"
 ---
 
 # Header 1
