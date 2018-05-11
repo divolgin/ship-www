@@ -1,3 +1,11 @@
 .header-section {
-    padding: 75px 0;
+    padding: 90px 0;
+    background: url("../../images/balloon-illustration@2x.png") no-repeat;
+    background-position: right -380px;
+    background-size: auto 920px;
+}
+
+.challenges-section {
+    padding: 60px 0;
+    background: #F5F8FC;
 }
