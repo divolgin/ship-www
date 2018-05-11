@@ -66,6 +66,7 @@
   padding: 0;
   font-weight: 500;
   color: #2A98CB;
+  line-height: 1.4; 
 }
 /* First ul */
 .single .sidebar #TableOfContents ul {
@@ -77,9 +78,6 @@
 .single .sidebar #TableOfContents ul li ul {
   padding-left: 10px;
   padding-top: 5px;
-}
-.single .resources li {
-  padding: 6px 0 0 0;
 }
 .single .resources li a:visited {
   color: #2A98CB;
