@@ -41,7 +41,7 @@
                                     <p class="u-fontSize--small u-fontWeight--normal u-color--dustyGray u-marginTop--normal u-lineHeight--normal u-marginBottom--normal"> Here are some resources we've prepared for this guide.</p>
                                     <ul>
                                         {{ range . }}
-                                            <li> <a href="{{ .src | urlize }}">{{ .title }}</a> </li>
+                                            <li> <a href="{{ .src | urlize }}" class="u-fontSize--normal" download>{{ .title }}</a> </li>
                                         {{ end }}
                                     </ul>
                                 </div>
