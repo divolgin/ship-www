@@ -71,13 +71,20 @@
 /* First ul */
 .single .sidebar #TableOfContents ul {
   padding: 0px;
+  margin-left: -5px;
+}
+.single .sidebar #TableOfContents > ul {
+  margin-top: -15px;
 }
 .single .sidebar #TableOfContents > ul li:first-of-type {
-  padding-top: 5px;
+  padding-top: 10px;
 }
 .single .sidebar #TableOfContents ul li ul {
-  padding-left: 10px;
+  padding-left: 12px;
   padding-top: 5px;
+}
+.single .sidebar #TableOfContents > ul > li > ul > li > ul > li a {
+  font-size: 12px;
 }
 .single .resources li a:visited {
   color: #2A98CB;
@@ -123,6 +130,9 @@
 }
 .guide-chapters-wrapper li a:hover .chapter-title {
   color: #2A98CB;
+}
+.resources li {
+  padding: 7px 0px;
 }
 .resources a {
   padding: 0;
