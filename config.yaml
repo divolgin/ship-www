@@ -41,13 +41,10 @@ algolia:
 
 menu:
   main:
-    - Name: "Guides"
+    - Name: "Modern On-prem"
       Weight: 1
-      URL: "/guides/"
-    - Name: "Documentation"
+      URL: "/"
+    - Name: "Docs"
       Weight: 2
-      URL: "https://help.replicated.com/docs/ship"
-    - Name: "Resources"
-      Weight: 3
-      URL: "/api/"
+      URL: "/guides"
 ---
