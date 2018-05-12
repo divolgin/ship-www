@@ -102,6 +102,42 @@ nav ul ul.show {
   top: 9px;
   z-index: 2;
 }
+header {
+  position: relative;
+}
+.guides-sub-nav {
+  display: none;
+  position: absolute;
+  z-index: 300;
+  background: #fff;
+  padding: 35px 0;
+  box-shadow: 0 0 4px rgba(0,0,0,0.16);
+  top: 13px;
+  right: 0;
+}
+.guides-sub-nav .guide-wrapper {
+  max-width: 155px;
+  padding: 0 45px;
+  border-right: solid #E8E6E6 1px;
+}
+.guides-sub-nav .guide-wrapper:last-of-type {
+  border: 0;
+}
+.guides-sub-nav .arrow {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  
+  border-bottom: 10px solid #fff;
+  top: -45px;
+  right: 35px;
+  position: absolute;
+}
+.guides-sub-nav .see-more {
+  bottom: 0;
+  right: 35px;
+}
 /* Hide search form in nav after 880px */
 @media screen and (max-width: 1024px) {
   .search-form input {

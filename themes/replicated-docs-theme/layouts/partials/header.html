@@ -54,11 +54,14 @@
 					<li>
 						<ul id="headerLinks" class="header-links">
 							{{ range .Site.Menus.main }}
-								<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+								<li><a href="{{ .URL | relURL }}" id="navItem--{{ .Name | urlize }}">{{ .Name }}</a></li>
 							{{ end }}
 						</ul>
 					</li>
 				</ul>
+			</div>
+			<div class="container u-position--relative">
+				{{ partial "guides_sub_nav.html" }}
 			</div>
 		</nav>
 	</header>

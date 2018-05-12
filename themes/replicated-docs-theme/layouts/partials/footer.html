@@ -102,6 +102,20 @@
       show: { effect: "fade", duration: 200 },
       hide: { effect: "fade", duration: 200 }
     });
+
+    $('#navItem--docs').on("mouseenter", function () {
+      $('.guides-sub-nav').show();
+    });
+    $('#navItem--modern-on-prem').on("mouseenter", function () {
+      $('.guides-sub-nav').hide();
+    });
+    
+    $('.home-nav').on("mouseleave", function () {
+      $('.guides-sub-nav').hide();
+    });
+    $('.other-nav').on("mouseleave", function (e) {
+      $('.guides-sub-nav').hide();
+    });
 	</script>
 </body>
 </html>
