@@ -73,6 +73,16 @@
   width: 117px;
   height: 119px;
 }
+.icon.u-replicatedAnsible {
+  background-position: -476px -3px;
+  width: 117px;
+  height: 119px;
+}
+.icon.u-replicatedCircleCI {
+  background-position: -476px -127px;
+  width: 117px;
+  height: 119px;
+}
 .icon.u-troubleshoot {
   background-position: -347px -130px;
   width: 118px;

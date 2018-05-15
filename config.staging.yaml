@@ -46,5 +46,5 @@ menu:
       URL: "/"
     - Name: "Docs"
       Weight: 2
-      URL: "/guides"
+      URL: "/docs"
 ---
