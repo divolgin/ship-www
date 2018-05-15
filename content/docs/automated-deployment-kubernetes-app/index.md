@@ -4,6 +4,7 @@ title: "Automated Deployment with a Kubenretes App"
 description: "Automated Deployment with a Kubenretes App"
 weight: "30003"
 gradient: "greenToGreen"
+icon: "replicatedKubernetes"
 resources: 
     - title: "ship_spec.yaml"
       src: "resources/ship_spec.yaml"

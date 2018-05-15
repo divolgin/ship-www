@@ -3,6 +3,7 @@ date: "2018-05-01T19:00:00Z"
 title: "Automated Updates with CircleCI"
 description: "Automated Updates with CircleCI"
 weight: "30003"
+icon: "replicatedCircleCI"
 gradient: "greenToGreen"
 resources: 
     - title: "ship_spec.yaml"
