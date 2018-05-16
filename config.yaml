@@ -41,9 +41,6 @@ algolia:
 
 menu:
   main:
-    - Name: "Modern On-prem"
-      Weight: 1
-      URL: "/"
     - Name: "Docs"
       Weight: 2
       URL: "/docs"

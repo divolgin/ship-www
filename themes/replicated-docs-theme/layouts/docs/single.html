@@ -31,8 +31,8 @@
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
                             <div class="toc u-marginBottom--most">
-                                <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
-																	{{ .TableOfContents }}
+                                <h3 class="u-fontWeight--medium u-lineHeight--normal u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
+								{{ .TableOfContents }}
                             </div>
 
                             {{ with .Params.resources }}
@@ -41,7 +41,7 @@
                                     <p class="u-fontSize--small u-fontWeight--normal u-color--dustyGray u-marginTop--normal u-lineHeight--normal u-marginBottom--normal"> Here are some resources we've prepared for this guide.</p>
                                     <ul>
                                         {{ range . }}
-                                            <li> <a href="{{ .src | urlize }}" class="u-fontSize--normal" download>{{ .title }}</a> </li>
+                                            <li> <a href="{{ .src | urlize }}" class="u-fontSize--small" download>{{ .title }}</a> </li>
                                         {{ end }}
                                     </ul>
                                 </div>
@@ -49,9 +49,11 @@
                         </div>
                     </div>
                     <div class="flex1 page-content-wrapper">
-                        <div class="page-content">
-                            {{ .Content }}
-                        </div>
+                        {{ with .Content }}
+                            <div class="page-content">
+                                {{ . | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1}&nbsp;<a class=\"headline-hash\" href=\"#${2}\">#</a> ${3}" | safeHTML }}
+                            </div>
+                        {{ end }}
                     </div>
                 </div>
             </div>
