@@ -64,9 +64,13 @@
 }
 .single .sidebar #TableOfContents ul li a {
   padding: 0;
+  font-size: 12px;
   font-weight: 500;
-  color: #2A98CB;
+  color: #4A4A4A;
   line-height: 1.4; 
+}
+.single .sidebar #TableOfContents ul li a:hover {
+  color: #2A98CB;
 }
 /* First ul */
 .single .sidebar #TableOfContents ul {
