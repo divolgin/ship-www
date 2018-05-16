@@ -1,23 +1,23 @@
 ---
 date: "2018-05-01T19:00:00Z"
-title: "Automated Deployment with a Kubenretes App"
-description: "Automated Deployment with a Kubenretes App"
+title: "Automated Deployment with a Kubernetes App"
+description: "Automated Deployment with a Kubernetes App"
 weight: "30003"
 gradient: "greenToGreen"
 icon: "replicatedKubernetes"
-resources: 
+resources:
     - title: "ship_spec.yaml"
       src: "resources/ship_spec.yaml"
     - title: "circle.config"
       src: "resources/circle.config"
 ---
-Kubernetes applications delivered in Replocated Ship can be deployed using automation instead of manually running `kubectl` to deploy from a laptop. It's possible to deploy the first release of an application completely automated, even to airgapped environmnets. This document walks through an example application and how it will be configured and initially deployed.
+Kubernetes applications delivered in Replicated Ship can be deployed using automation instead of manually running `kubectl` to deploy from a laptop. It's possible to deploy the first release of an application completely automated, even to airgapped environmnets. This document walks through an example application and how it will be configured and initially deployed.
 
 ## Prerequisites
 
 In addition to any external resources the software vendor requries (databases, etc), you'll need to have:
 
-- a version control system (VCS) ,such as GitHub Enterprise
+- a version control system (VCS), such as GitHub Enterprise
 - a secure storage location, that can store a single, small, encrypted file
 - a continuous intergration / continuous delivery platform, such as CircleCI Enterprise or TravisCI Enterprise
 - a local Docker Registry, that is accessible to the target Kubernetes cluster, such as Artifactory
