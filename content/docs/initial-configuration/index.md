@@ -4,11 +4,6 @@ title: "Initial configuration"
 description: "Configuring an application for the first deployment"
 weight: "30003"
 gradient: "greenToGreen"
-resources:
-    - title: "ship_spec.yaml"
-      src: "resources/ship_spec.yaml"
-    - title: "circle.config"
-      src: "resources/circle.config"
 ---
 
 # Initial Configuration

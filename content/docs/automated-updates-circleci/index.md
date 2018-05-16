@@ -5,10 +5,8 @@ description: "Automated Updates with CircleCI"
 weight: "30003"
 icon: "replicatedCircleCI"
 gradient: "greenToGreen"
-resources: 
-    - title: "ship_spec.yaml"
-      src: "resources/ship_spec.yaml"
-    - title: "circle.config"
+resources:
+    - title: ".circleci/config.yaml"
       src: "resources/circle.config"
 ---
 CircleCI (and CircleCI Enterprise) workflows can be used to automatically deploy updates to a Ship application when there's an update available.
@@ -33,7 +31,7 @@ The CircleCI build environment will need to have access to some secrets. Add the
 1. CUSTOMER_ID. This variable is static, and supplied by the application vendor.
 1. Credentials needed to deploy the application. In this case, it's a Kubernetes application, so credentials to log in to the cluster using `kubectl`.
 
-## Download and descrypt state
+## Download and decrypt state
 
 ## Pull the latest Ship container
 
@@ -61,13 +59,11 @@ jobs:
 
       - run:
           name: fetch state
-          command: s3 cli download && descrypt
 
       - run:
           name: connfigure
-          command: ship ...
 
-      - store_test_results:
+      - store_state:
           path: results
 
       - persist_to_workspace:
