@@ -1,10 +1,10 @@
 ---
 date: "2018-05-01T19:00:00Z"
 title: "Managing State"
-description: "This is a test chapter and doesn't have any content"
+description: "Best practices to securely store and maange state"
 weight: "30003"
 gradient: "greenToGreen"
-resources: 
+resources:
     - title: "ship_spec.yaml"
       src: "resources/ship_spec.yaml"
     - title: "circle.config"
