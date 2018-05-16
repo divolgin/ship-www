@@ -32,7 +32,7 @@
                         <div class="sidebar">
                             <div class="toc u-marginBottom--most">
                                 <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
-																	{{ .TableOfContents }}
+								{{ .TableOfContents }}
                             </div>
 
                             {{ with .Params.resources }}
@@ -49,9 +49,11 @@
                         </div>
                     </div>
                     <div class="flex1 page-content-wrapper">
-                        <div class="page-content">
-                            {{ .Content }}
-                        </div>
+                        {{ with .Content }}
+                            <div class="page-content">
+                                {{ . | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1}&nbsp;<a class=\"headline-hash\" href=\"#${2}\">#</a> ${3}" | safeHTML }}
+                            </div>
+                        {{ end }}
                     </div>
                 </div>
             </div>
