@@ -17,7 +17,7 @@ When configurating and deploying a Ship application, it's common to create the i
 
 The best way to deploy a Replicated Ship application is to run the `replicated/ship` process on a workstation that doesn't have direct access to the production servers. Complete the initial configuration process and create all assets from this workstation. Ship provides a web-based UI that runs locally (in Docker) to make this process similar across different applications.
 
-{{< linked_headline "Generating the initial configuration" >}}
+## Generating the initial configuration
 
 Before an application can be installed, the initial configuration should be generated. Start with a workstation (MacOS, Windows, Linux) that has Docker installed. This process is designed to run on a workstation that can pull external resources (not airgapped), and prepare them for deployment inside the network. The workstation running the configuration isn't required to have access to the target server(s).
 
@@ -36,7 +36,7 @@ Please visit the following URL in your browser to continue the installation
 
 ```
 
-{{< linked_headline "The Admin Console" >}}
+## The Admin Console
 
 Visiting this URL from the same workstation will open a web-based workflow to configure the application and bring all initial artifacts and configuration into a directory on the workstation, to be deployed at any time.
 
@@ -44,7 +44,7 @@ Each application will require different inputs to generate the initial configura
 
 The next steps will vary, depending on the application being configured. Be sure to read these.
 
-{{< linked_headline "Deploying" >}}
+## Deploying
 
 After completing the initial configuration steps using the Admin Console, most applications will download and generate various assets (configuration files, docker images, kubernetes manifests, etc). By default, these will be stored in a directory named `./installer` (relative to the directory the Admin Console was started from).
 
@@ -86,6 +86,6 @@ By convention, a Ship application will create a `installer/scripts` directory. T
 
 For applications that are packaged in Docker containers, the `installer/images` directory will contain exported, `.tar` files for all application images that are required to run the application.
 
-{{< linked_headline "Deploying" >}}
+## Deploying
 
 Once the application has been configured locally, the `./ship/state.json` and `./ship/release.yaml` can be [securely stored](../manage-state) and then configured to be [automatically deployed](../automated-deployment).
