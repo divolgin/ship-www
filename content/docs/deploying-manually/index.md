@@ -4,4 +4,5 @@ title: "Deploying Manually"
 description: "Deploying Manually"
 weight: "30003"
 gradient: "greenToGreen"
+categories: [ "Configuring" ]
 ---

@@ -4,6 +4,7 @@ title: "Automated Testing"
 description: "Automated Testing"
 weight: "30003"
 gradient: "greenToGreen"
+categories: [ "Testing" ]
 ---
 
 Before a process should be enabled to automatically deploy the latest version of an application to a production server, it's a good idea to deploy each release to a different environment and run a series of tests to confirm the application is working as expected.

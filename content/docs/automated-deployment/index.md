@@ -5,9 +5,8 @@ description: "Automated Deployment"
 weight: "30003"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
+categories: [ "Deploying" ]
 ---
-
-# Automated Deployment
 
 Applications delivered in Replicated Ship can be deployed using automation instead of manually running installation scripts. It's possible to deploy the first release of an application completely automated, even to airgapped environments. The process to automate deployment of an application varies, depending on the automation tools used. This document defines the steps involved in automating the deployment of an on-prem application, with links to specific implementations, when possible.
 

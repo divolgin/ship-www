@@ -145,6 +145,36 @@
   color: #2A98CB;
 }
 
+.docs-sections section {
+  padding: 60px 0;
+}
+
+.docs-sections .category-info,
+.docs-sections .docs-list {
+  max-width: 440px;
+}
+
+.docs-sections .docs-list .doc {
+  padding: 20px 0;
+}
+
+.docs-sections .docs-list a:last-of-type {
+  border: 0;
+}
+
+.docs-sections .docs-list .doc .index {
+  background: #F5F8FC;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 25px;
+  color: #2A98CB;
+  margin-right: 10px;
+}
+
 /* ≥ 568px */
 @media screen and (min-width: 35.5em) {
   .chapter-block ul {
