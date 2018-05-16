@@ -41,25 +41,3 @@ Help center can be built for either staging or prod via:
  make serve_staging
 ```
 
-### Indexing Content
-
-Included in this project is the [hugo-algolia](https://github.com/10Dimensional/hugo-algolia) package, which crawls the /content folder of the site and indexes all the content. If you want to re-index the site and/or send new docs content to Algolia, you can use the following commands:
-
-#### Index the site
-This command indexes the whole site and puts content into a single array.
-
-```bash
-make index-site
-```
-
-#### Index the site and send content to Algolia account
-This command indexes the whole site and sends the array to Algolia.
-
-```bash
-make index-and-send
-```
-
-You can index and send content to our staging indices via:
-```bash
-make index-and-send-staging
-```
