@@ -5,6 +5,7 @@ description: "Automated Deployment with a Kubernetes App"
 weight: "30003"
 gradient: "greenToGreen"
 icon: "replicatedKubernetes"
+categories: [ "Deploying" ]
 resources:
     - title: "ship_spec.yaml"
       src: "resources/ship_spec.yaml"
