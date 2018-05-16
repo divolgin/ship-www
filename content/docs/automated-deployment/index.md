@@ -11,15 +11,13 @@ icon: "replicatedCircle"
 
 Applications delivered in Replicated Ship can be deployed using automation instead of manually running installation scripts. It's possible to deploy the first release of an application completely automated, even to airgapped environments. The process to automate deployment of an application varies, depending on the automation tools used. This document defines the steps involved in automating the deployment of an on-prem application, with links to specific implementations, when possible.
 
-{{< linked_headline "Overview" >}}
-
 The process to automate deployment of an application involves 3 steps:
 
 1. Create the initial `state.json` and `release.yml`.
 1. From these 2 files, automate creation of all required assets
 1. Execute the install script to deploy
 
-{{< linked_headline "Create state.json and release.yml" >}}
+## Create state.json and release.yml
 
 From a workstation (not the server) running Docker, run the setup command provided by the software vendor. For example:
 
@@ -54,7 +52,7 @@ The configured state will be in a single file, stored in `.ship/state.json`. Thi
 
 The original YAML file that the software vendor created and was used as an input to create the local assets is stored in `./.ship/release.yaml`. This file doesn't contain any secrets, it's a generic release manifest. This file can be commited to a configuration management repo or any other tool to automate deployment.
 
-{{< linked_headline "Automate release creation" >}}
+## Automate release creation
 
 From the `state.json` and `release.yml`, it's possible to generate all assets that were originally created under the `installer/` directory, using the following command:
 
@@ -67,13 +65,13 @@ $ docker run -v `PWD`:/in  -v`PWD`:/out \
 
 This will pull the Replicated Ship container, then it will use the Ship container to build and fetch all required assets. The command will mount the `release.yml` and `state.json` files into known locations for the `replicated/ship` container to read. Using the customer_id provided (the license key), the ship container will pull all images or artifacts, and apply the state.json values to them to create the deployable assets.
 
-{{< linked_headline "Deploy" >}}
+## Deploy
 
 Deploying the application is as simple as running `./installer/scripts/install.sh`. This installer is customized with the configuration info that was passed in, and will deploy to the target servers or clusters that are defined.
 
 ---
 
-{{< linked_headline "Related documents" >}}
+## Related documents
 
 - [Automated Deployment of a Kubernetes application](../automated-deployment-kubernetes-app)
 - [Automated Updates with CircleCI](../automated-updates-circleci)
