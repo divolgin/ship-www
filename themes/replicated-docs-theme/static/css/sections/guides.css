@@ -205,3 +205,18 @@
     padding-left: 40px;  
   }
 }
+
+/* ≥ 768px */
+@media screen and (max-width: 1024px) {
+  .docs-sections section {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .docs-sections section .docs-list {
+    margin-top: 30px;
+    align-self: flex-start;
+  }
+}
