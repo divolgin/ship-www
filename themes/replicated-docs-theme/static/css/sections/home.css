@@ -32,25 +32,29 @@
     border-right: #E8E6E6 solid 2px;
 }
 
+.swim-lane-section .lane .img {
+    z-index: 1;
+}
+
 .swim-lane-section .configure-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 0;
-    width: 149px;
-    height: 117px;
+    background-position: 0 8px;
+    width: 152px;
+    height: 126px;
 }
 
 .swim-lane-section .build-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 -128px;
-    width: 137px;
-    height: 117px;
+    background-position: 0 -125px;
+    width: 140px;
+    height: 125px;
 }
 
 .swim-lane-section .deploy-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
     background-position: 0 -265px;
-    width: 98px;
-    height: 127px;
+    width: 105px;
+    height: 132px;
 }
 
 .swim-lane-section .update-img {
@@ -60,11 +64,116 @@
     height: 119px;
 }
 
+.swim-lane-section .merge-circle {
+    background: url("../../images/swimlane_spritesheet.svg") no-repeat;
+    background-position: -166px -3px;
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    left: 241px;
+    top: 14px;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.swim-lane-section .pull-circle {
+    background: url("../../images/swimlane_spritesheet.svg") no-repeat;
+    background-position: -166px -73px;
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    left: 492px;
+    top: 14px;
+    bottom: 0;
+    margin: auto 0;
+}
+
+.swim-lane-section .update-circle {
+    background: url("../../images/swimlane_spritesheet.svg") no-repeat;
+    background-position: -166px -143px;
+    width: 57px;
+    height: 57px;
+    position: absolute;
+    left: 742px;
+    top: 14px;
+    bottom: 0;
+    margin: auto 0;
+}
+
 .swim-lane-section .lane:last-of-type {
     border-right: 0;
+}
+
+.swim-lane-section .line {
+    top: 17px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 4px;
+    width: 720px;
+    background: #63C07D;
+    z-index: 0;
 }
 
 .challenges-section {
     padding: 60px 0;
     background: #F5F8FC;
+}
+
+@media screen and (max-width: 1024px) {
+    .swim-lane-section .line,
+    .swim-lane-section .update-circle,
+    .swim-lane-section .pull-circle,
+    .swim-lane-section .merge-circle {
+        display: none;
+    }
+
+    .swim-lane-section .lane:nth-of-type(4) {
+        border: 0;
+    }
+
+    .swim-lane-section .container {
+        max-width: 745px;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .header-section .container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-section .container div:last-of-type {
+        width: 100%;
+    }
+
+    .header-section .container div:last-of-type {
+        font-size: 15px;
+    }
+
+    .header-section .cube-logo {
+        margin-left: 45px;
+        margin-bottom: 20px;
+    }
+
+    .header-section {
+        background-position: center -378px;
+        background-size: 2347px auto;
+    }
+}
+
+@media screen and (max-width: 498px) {
+    .swim-lane-section .lane {
+        border: 0;
+    }
+    .swim-lane-section .container {
+        padding-right: 30px;
+        padding-left: 30px;
+        box-sizing: border-box;
+    }
+    .swim-lane-section br {
+        display: none;
+    }
 }
