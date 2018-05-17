@@ -1,5 +1,4 @@
 .main-section.documentation {
-  background-color: #F5F8FC;
   border-top: 1px solid #DFDFDF;
   border-bottom: 1px solid #DFDFDF;
 }
@@ -74,8 +73,5 @@
   }
   .doc-ref-list-item:nth-child(2n) .doc-ref {
     padding-right: 40px;
-  }
-  .doc-ref-list-item:nth-child(3n) .doc-ref {
-    padding-right: 0;
   }
 }
