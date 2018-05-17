@@ -8,7 +8,7 @@ gradient: "greenToGreen"
 
 # Initial Configuration
 
-When configurating and deploying a Ship application, it's common to create the initial configuration, then build a audited, workflow-driven process to automate the deployment and future updates. When initially configuring and deploying an unfamiliar application, it's helpful to start with some easy-to-use tools to help bootstrap the process.
+When configuring and deploying a Ship application, it's common to create the initial configuration, then build a audited, workflow-driven process to automate the deployment and future updates. When initially configuring and deploying an unfamiliar application, it's helpful to start with some easy-to-use tools to help bootstrap the process.
 
 The best way to deploy a Replicated Ship application is to run the `replicated/ship` process on a workstation that doesn't have direct access to the production servers. Complete the initial configuration process and create all assets from this workstation. Ship provides a web-based UI that runs locally (in Docker) to make this process similar across different applications.
 
