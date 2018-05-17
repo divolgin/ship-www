@@ -120,3 +120,60 @@
     padding: 60px 0;
     background: #F5F8FC;
 }
+
+@media screen and (max-width: 1024px) {
+    .swim-lane-section .line,
+    .swim-lane-section .update-circle,
+    .swim-lane-section .pull-circle,
+    .swim-lane-section .merge-circle {
+        display: none;
+    }
+
+    .swim-lane-section .lane:nth-of-type(4) {
+        border: 0;
+    }
+
+    .swim-lane-section .container {
+        max-width: 745px;
+    }
+}
+
+@media screen and (max-width: 598px) {
+    .header-section .container {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .header-section .container div:last-of-type {
+        width: 100%;
+    }
+
+    .header-section .container div:last-of-type {
+        font-size: 15px;
+    }
+
+    .header-section .cube-logo {
+        margin-left: 45px;
+        margin-bottom: 20px;
+    }
+
+    .header-section {
+        background-position: center -378px;
+        background-size: 2347px auto;
+    }
+}
+
+@media screen and (max-width: 498px) {
+    .swim-lane-section .lane {
+        border: 0;
+    }
+    .swim-lane-section .container {
+        padding-right: 30px;
+        padding-left: 30px;
+        box-sizing: border-box;
+    }
+    .swim-lane-section br {
+        display: none;
+    }
+}
