@@ -1,8 +1,15 @@
 .header-section {
     padding: 90px 0;
-    background: url("../../images/balloon-illustration@2x.png") no-repeat;
-    background-position: right -380px;
-    background-size: auto 920px;
+    background: url("../../images/header-bg@2x.png") no-repeat;
+    background-position: center -280px;
+    background-size: 1847px auto;
+}
+
+.header-section .cube-logo {
+    background: url("../../images/cube-logo@2x.png") no-repeat;
+    background-size: 147px auto; 
+    width: 197px;
+    height: 157px;
 }
 
 .challenges-section {
