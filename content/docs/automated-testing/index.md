@@ -9,7 +9,7 @@ categories: [ "Testing" ]
 
 Before a process should be enabled to automatically deploy the latest version of an application to a production server, it's a good idea to deploy each release to a different environment and run a series of tests to confirm the application is working as expected.
 
-A commonn feature of most Ship applications is to include everything necessary to test the application, packaged as a `bash` script. This enables you, the operator, to rely on the operational knowledge that the software vendor has included to ensure each deployment and update is successful.
+A common feature of most Ship applications is to include everything necessary to test the application, packaged as a `bash` script. This enables you, the operator, to rely on the operational knowledge that the software vendor has included to ensure each deployment and update is successful.
 
 ## Understanding the tests
 
