@@ -2,7 +2,7 @@ nav.home-nav {
   background: #4cbf6c;
 }
 nav {
-  background: rgba(255,255,255,.15);
+  background: #75d580;
   padding: 15px 0 13px;
   position: fixed;
   width: 100%;
@@ -43,7 +43,7 @@ nav ul ul.show {
 .search-form {
   display: flex;
   position: absolute;
-  right: 95px;
+  right: 0px;
   top: 10px;
 }
 .search-form input {
@@ -125,7 +125,7 @@ header {
   
   border-bottom: 10px solid #fff;
   top: -45px;
-  right: 35px;
+  right: 42px;
   position: absolute;
 }
 .guides-sub-nav .see-more {
@@ -159,7 +159,7 @@ header {
 @media screen and (min-width: 48em) {
   nav {
     position: absolute;
-    background: rgba(255,255,255,.15);
+    background: #75d580;
   }
   nav ul li {
     display: inline-block;

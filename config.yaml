@@ -36,12 +36,15 @@ taxonomies:
   kb-section: "kb-sections"
 
 algolia:
-  index: "help_center"
+  index: "ship"
   appID: "5PHVQPX4AR"
 
 menu:
   main:
-    - Name: "Docs"
+    - Name: "Documentation"
       Weight: 2
-      URL: "/docs"
+      URL: "/docs/ship-yaml/getting-started/overview"
+    - Name: "Guides"
+      Weight: 2
+      URL: "/guides"
 ---

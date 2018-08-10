@@ -149,8 +149,8 @@
         width: 100%;
     }
 
-    .header-section .container div:last-of-type {
-        font-size: 15px;
+    .header-section .container div:last-of-type p {
+        font-size: 14px;
     }
 
     .header-section .cube-logo {
