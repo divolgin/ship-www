@@ -9,8 +9,6 @@ icon: "replicatedShip"
 gradient: "console"
 ---
 
-{{< linked_headline "Kubernetes and Airgap" >}}
-
 When distributing a Kubernetes (or Helm) application using Replicated Ship, there will be a running Kubernetes cluster to deploy to. Enterprise Kubernetes clusters that are used for internal applications can be installed and operated in airgapped environments. An airgap cluster is any cluster that doesn't have outbound Internet access, and therefore cannot pull the application images from a Docker registry.
 
 The recommended way to deploy applications to airgap clusters is to require a Docker registry that's already running in the customer environment.
@@ -26,7 +24,7 @@ Once these requirements are met, the Ship assets and scripts can:
 1. Retag the images to match the registry endpoint and namespace
 1. Update the Kubernetes YAML to reflect the correct registry to pull from
 
-{{< linked_headline "Example using Kubernetes and a Registry" >}}
+## Example using Kubernetes and a Registry
 
 ```yaml
 assets:
