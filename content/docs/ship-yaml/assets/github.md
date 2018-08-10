@@ -20,7 +20,7 @@ GitHub assets can be used to pull content from private or public GitHub reposito
 To deliver an asset from a private github repository, you'll need to install the [Replicated GitHub Application](https://github.com/apps/replicated) into your organization and give it access to any repositories you'd like to deliver.
 
 
-{{< linked_headline "Delivering a Single File" >}}
+## Delivering a Single File
 
 The following example will create a `rook-operator.yml` from [the rook examples repository](https://github.com/rook/rook/blob/master/cluster/examples/kubernetes/ceph/operator.yaml) on the installer's workstation, as well as a script to deploy the operator to an existing Kubernetes cluster.
 
