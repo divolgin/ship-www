@@ -9,8 +9,6 @@ icon: "replicatedShip"
 gradient: "console"
 ---
 
-{{< linked_headline "Troubleshooting a Kubernetes Application" >}}
-
 When distributing a Kubernetes (or Helm) application, things may sometimes go wrong with getting your app running in your end customer's installation environment. A few examples:
 
 - They may be running an incompatible kubernetes version
@@ -19,7 +17,7 @@ When distributing a Kubernetes (or Helm) application, things may sometimes go wr
 
 No matter what the issue is, you'll likely need to collect logs, workload statuses, and other information about the installation environment in order to help get your end customer up and running. Replicated's [Support Bundle](/guides/support-bundle) can help you automate and organize the collection of this information. This highly customizable and configurable tool allows for collecting files and command results into a portable `.tar.gz` file that your customer can upload to https://console.replicated.com or send to your support team to diagnose.
 
-{{< linked_headline "Troubleshoot Assets Example" >}}
+## Troubleshoot Assets Example
 
 In this example we include two assets:
 

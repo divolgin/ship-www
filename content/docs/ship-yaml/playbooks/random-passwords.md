@@ -9,8 +9,6 @@ icon: "replicatedShip"
 gradient: "console"
 ---
 
-{{< linked_headline "Managing Persistent Random Strings" >}}
-
 When distributing an applications, it can be useful to generate passwords as part of the bootstrap process. For example, if your app bundles an SQL database, you'll want to set a password on this database, and allow other application components to use that password to access the data. This can be done through the use of a hidden, mutable string value and the `RandomString` template function.
 
 ```yaml
@@ -39,7 +37,7 @@ config:
         value: '{{repl ConfigOption "db_password" }}'
 ```
 
-{{< linked_headline "Generating Ephemeral Random Strings" >}}
+## Generating Ephemeral Random Strings
 
 In some cases you may wish to generate a nonce that will be regenerated every time that ship is run. This can be done by using the same struture as the persistent password example but with the addition of `readonly: true`. Readonly values are not loaded from the saved `state.json` file, and so your random string will be recreated every time.
 

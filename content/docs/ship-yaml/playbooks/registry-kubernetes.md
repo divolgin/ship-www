@@ -9,13 +9,11 @@ icon: "replicatedShip"
 gradient: "console"
 ---
 
-{{< linked_headline "Shipping a Docker Registry for airgap installations" >}}
-
 When distributing a Kubernetes (or Helm) application, most customers will be able to provide a Docker registry that required application images can be pushed to. Replicated Ship can [retag and rewrite the Kubernetes YAML](/docs/ship/recipes/airgap-kubernetes/) to work in this scenario.
 
 If the Kubernetes cluster ] was set up using the [Replicated Kubernetes installer](/docs/kubernetes/customer-installations/installing-k8s-only/), a Docker registry might not be available. The Replicated Kubernetes installer will pre-pull the `registry:2` image on all nodes in the cluster.
 
-{{< linked_headline "Docker Registry Assets" >}}
+## Docker Registry Assets
 
 To start, include the following assets in a Ship release. These define the Docker registry, and will help get the registry bootstrapped into the cluster. Note that the `imagePullPolicy` in the `pod` is set to `Never` because the cluster should not attempt to pull the image from Docker Hub, and instead expect that the image will already be present.
 
@@ -66,7 +64,7 @@ assets:
                   name: registry-data
 ```
 
-{{< linked_headline "Private Images" >}}
+## Private Images
 
 Next, include your private images in your Ship YAML as assets. This will force Ship to download these to the installation workstation:
 
@@ -94,7 +92,7 @@ assets:
                 imagePullPolicy: Always
 ```
 
-{{< linked_headline "Installation script" >}}
+## Installation script
 
 ```yaml
 assets:
