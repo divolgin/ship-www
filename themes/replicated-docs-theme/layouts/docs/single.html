@@ -30,11 +30,13 @@
                 <div class="u-flexTabletReflow flex1">
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
-                            <div class="toc u-marginBottom--most">
-                                <h3 class="u-fontWeight--medium u-lineHeight--normal u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
-								{{ .TableOfContents }}
-                            </div>
-
+                            <!-- {{ if gt (len .TableOfContents) 0 }}
+                                <div class="toc u-marginBottom--most">
+                                    <h3 class="u-fontWeight--medium u-lineHeight--normal u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
+                                    {{ .TableOfContents }}
+                                </div>
+                            {{ end }} -->
+                            {{ partial "section_folder_navigation.html" . }}
                             {{ with .Params.resources }}
                                 <div class="resources">
                                     <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">Resources</h3>
