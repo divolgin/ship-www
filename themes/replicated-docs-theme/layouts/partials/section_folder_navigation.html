@@ -35,7 +35,7 @@
         <div class="desktop-only">
             {{ if eq $scope "Ship Init" }}
             <div class="u-marginBottom--most">
-                {{ with .Site.GetPage "section" "docs" "ship-init" }}
+                {{ with .Site.GetPage "/docs/ship-init" }}
                     {{ range .Pages }}
                         <p class="u-paddingTop--small u-fontSize--normal u-lineHeight--normal">
                             <a href="{{ .Permalink }}" class="{{ if and (eq .Title $currentPage.Title) (eq .CurrentSection $currentSection) }} u-color--curiousBlueDark u-fontWeight--bold {{ else }} u-color--curiousBlue {{ end }}">
@@ -67,7 +67,7 @@
             {{ end }}
             {{ if eq $scope "Ship YAML" }}
             <div class="u-marginBottom--most">
-                {{ with .Site.GetPage "section" "docs" "ship-yaml" }}
+                {{ with .Site.GetPage "/docs/ship-yaml" }}
                     {{ range .Pages }}
                         <p class="u-paddingTop--small u-fontSize--normal u-lineHeight--normal">
                             <a href="{{ .Permalink }}" class="{{ if and (eq .Title $currentPage.Title) (eq .CurrentSection $currentSection) }} u-color--curiousBlueDark u-fontWeight--bold {{ else }} u-color--curiousBlue {{ end }}">
@@ -99,7 +99,7 @@
             {{ end }}
             {{ if eq $scope "Ship Watch" }}
             <div class="u-marginBottom--most">
-                {{ with .Site.GetPage "section" "docs" "ship-watch" }}
+                {{ with .Site.GetPage "/docs/ship-watch" }}
                     {{ range .Pages }}
                         <p class="u-paddingTop--small u-fontSize--normal u-lineHeight--normal">
                             <a href="{{ .Permalink }}" class="{{ if and (eq .Title $currentPage.Title) (eq .CurrentSection $currentSection) }} u-color--curiousBlueDark u-fontWeight--bold {{ else }} u-color--curiousBlue {{ end }}">
@@ -131,7 +131,7 @@
             {{ end }}
             {{ if eq $scope "Ship Update" }}
             <div class="u-marginBottom--most">
-                {{ with .Site.GetPage "section" "docs" "ship-update" }}
+                {{ with .Site.GetPage "/docs/ship-update" }}
                     {{ range .Pages }}
                         <p class="u-paddingTop--small u-fontSize--normal u-lineHeight--normal">
                             <a href="{{ .Permalink }}" class="{{ if and (eq .Title $currentPage.Title) (eq .CurrentSection $currentSection) }} u-color--curiousBlueDark u-fontWeight--bold {{ else }} u-color--curiousBlue {{ end }}">
