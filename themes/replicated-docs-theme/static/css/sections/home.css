@@ -38,39 +38,41 @@
 
 .swim-lane-section .configure-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 8px;
+    background-position: 12px 13px;
     width: 152px;
     height: 126px;
 }
 
 .swim-lane-section .build-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 -125px;
-    width: 140px;
+    background-position: 5px -125px;
+    width: 142px;
     height: 125px;
 }
 
 .swim-lane-section .deploy-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 -265px;
+    background-position: 8px -265px;
     width: 105px;
     height: 132px;
 }
 
 .swim-lane-section .update-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 0 -416px;
+    background-position: -15px -415px;
     width: 123px;
-    height: 119px;
+    height: 134px;
+    position: relative;
+    top: -2px;
 }
 
 .swim-lane-section .merge-circle {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: -166px -3px;
-    width: 57px;
-    height: 57px;
+    background-position: -161px -1px;
+    width: 62px;
+    height: 62px;
     position: absolute;
-    left: 241px;
+    left: 237px;
     top: 14px;
     bottom: 0;
     margin: auto 0;
@@ -78,11 +80,11 @@
 
 .swim-lane-section .pull-circle {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: -166px -73px;
-    width: 57px;
-    height: 57px;
+    background-position: -162px -70px;
+    width: 62px;
+    height: 62px;
     position: absolute;
-    left: 492px;
+    left: 738px;
     top: 14px;
     bottom: 0;
     margin: auto 0;
@@ -90,14 +92,14 @@
 
 .swim-lane-section .update-circle {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: -166px -143px;
-    width: 57px;
-    height: 57px;
+    background-position: -162px -141px;
+    width: 62px;
+    height: 62px;
     position: absolute;
-    left: 742px;
+    left: 488px;
     top: 14px;
     bottom: 0;
-    margin: auto 0;
+    margin: auto 0
 }
 
 .swim-lane-section .lane:last-of-type {
