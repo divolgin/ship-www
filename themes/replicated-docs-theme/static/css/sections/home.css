@@ -52,15 +52,15 @@
 
 .swim-lane-section .deploy-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: 8px -265px;
+    background-position: 8px -267px;
     width: 105px;
     height: 132px;
 }
 
 .swim-lane-section .update-img {
     background: url("../../images/swimlane_spritesheet.svg") no-repeat;
-    background-position: -15px -415px;
-    width: 123px;
+    background-position: 0px -415px;
+    width: 141px;
     height: 134px;
     position: relative;
     top: -2px;
