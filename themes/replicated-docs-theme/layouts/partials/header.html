@@ -53,7 +53,7 @@
 					<li>
 						<ul id="headerLinks" class="header-links">
 							{{ range .Site.Menus.main }}
-								<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+								<li><a href="{{ .URL | relURL }}" id="navItem--{{ .Name | urlize }}">{{ .Name }}</a></li>
 							{{ end }}
 							<li>
 								<div class="search-form">

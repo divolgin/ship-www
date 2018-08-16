@@ -93,17 +93,13 @@
       hide: { effect: "fade", duration: 200 }
     });
 
-    $('#navItem--guides').on("mouseenter", function () {
+    $('#navItem--documentation').on("mouseenter", function () {
       $('.guides-sub-nav').show();
     });
-    $('#navItem--documentation').on("mouseenter", function () {
+    $('#navItem--guides, .logo-link').on("mouseenter", function () {
       $('.guides-sub-nav').hide();
     });
-    
-    $('.home-nav').on("mouseleave", function () {
-      $('.guides-sub-nav').hide();
-    });
-    $('.other-nav').on("mouseleave", function (e) {
+    $('.home-nav, .other-nav').on("mouseleave", function () {
       $('.guides-sub-nav').hide();
     });
   </script>
