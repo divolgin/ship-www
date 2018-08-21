@@ -1,3 +1,5 @@
+.PHONY: install build build_staging serve serve_staging index-site index-and-send index-and-send-staging vendordocs setup
+
 VENDOR_SWAGGER_SOURCE ?= "https://api.replicated.com/vendor"
 
 install:
