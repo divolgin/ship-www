@@ -19,12 +19,12 @@
             <section class="config-section flex justifyContent--spaceBetween u-borderBottom--gray u-paddingTop--most u-paddingBottom--most">
                 <div class="category-info flex flex-column flex1 alignItems--center u-marginRight--most">
                     <div class="icon u-replicatedCircle"></div>
-                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Configure</h2>
-                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Let us be the first to welcome you! We’ll start with core concepts and terminology and then get you set up to create and license your first application.</p>
+                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Learn Ship</h2>
+                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">This set of guides are designed to help you understand Ship and the three operating modes.</p>
                     <a href="/docs/deploying-manually/" class="Button secondary">Get Started</a>
                 </div>
                 <div class="docs-list flex1">
-                    {{ range $index, $element := .Site.Taxonomies.categories.configuring }}
+                    {{ range $index, $element := .Site.Taxonomies.categories.learn }}
                         <a href="{{ .Permalink }}" class="u-display--block u-borderBottom--gray">
                             <div class="doc flex">
                                 <div class="index">{{ (add $index 1) }}</div>
@@ -40,12 +40,12 @@
             <section class="test-section flex justifyContent--spaceBetween u-borderBottom--gray u-paddingTop--most u-paddingBottom--most">
                 <div class="category-info flex flex-column flex1 alignItems--center u-marginRight--most">
                     <div class="icon u-replicatedCircle"></div>
-                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Testing</h2>
-                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Let us be the first to welcome you! We’ll start with core concepts and terminology and then get you set up to create and license your first application.</p>
+                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Upstream Applications</h2>
+                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">The guides here will explain how Ship operates with various types of upstream applications.</p>
                     <a href="/docs/automated-testing/" class="Button secondary">Get Started</a>
                 </div>
                 <div class="docs-list flex1">
-                    {{ range $index, $element := .Site.Taxonomies.categories.testing }}
+                    {{ range $index, $element := .Site.Taxonomies.categories.upstream }}
                         <a href="{{ .Permalink }}" class="u-display--block u-borderBottom--gray">
                             <div class="doc flex">
                                 <div class="index">{{ (add $index 1) }}</div>
@@ -61,29 +61,8 @@
             <section class="deploy-section flex justifyContent--spaceBetween u-borderBottom--gray u-paddingTop--most u-paddingBottom--most">
                  <div class="category-info flex flex-column flex1 alignItems--center u-marginRight--most">
                     <div class="icon u-replicatedCircle"></div>
-                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Deploying</h2>
-                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Let us be the first to welcome you! We’ll start with core concepts and terminology and then get you set up to create and license your first application.</p>
-                    <a href="/docs/automated-deployment/" class="Button secondary">Get Started</a>
-                </div>
-                <div class="docs-list flex1">
-                    {{ range $index, $element := .Site.Taxonomies.categories.deploying }}
-                        <a href="{{ .Permalink }}" class="u-display--block u-borderBottom--gray">
-                            <div class="doc flex">
-                                <div class="index">{{ (add $index 1) }}</div>
-                                <div>
-                                    <h3 class="u-fontSize--larger u-fontWeight--medium u-color--tuna">{{ .Title }}</h3>
-                                    <p class="u-fontSize--normal u-fontWeight--normal u-color--dustyGray u-marginTop--normal">{{ .Description }}</p>
-                                </div>
-                            </div>
-                        </a>
-                    {{ end }}
-                </div>
-            </section>
-            <section class="deploy-section flex justifyContent--spaceBetween u-borderBottom--gray u-paddingTop--most u-paddingBottom--most">
-                 <div class="category-info flex flex-column flex1 alignItems--center u-marginRight--most">
-                    <div class="icon u-replicatedCircle"></div>
-                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Updating</h2>
-                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Let us be the first to welcome you! We’ll start with core concepts and terminology and then get you set up to create and license your first application.</p>
+                    <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">CI/CD</h2>
+                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">A collection of guides to help show how Ship can be built into a continuous integration and continuous delivery (CI/CD) process.</p>
                     <a href="/docs/automated-deployment/" class="Button secondary">Get Started</a>
                 </div>
                 <div class="docs-list flex1">
@@ -104,7 +83,7 @@
                 <div class="category-info flex flex-column flex1 alignItems--center u-marginRight--most">
                     <div class="icon u-replicatedCircle"></div>
                     <h2 class="u-fontSize--jumbo u-fontWeight--medium u-marginTop--more u-marginBottom--more">Best Practices</h2>
-                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Let us be the first to welcome you! We’ll start with core concepts and terminology and then get you set up to create and license your first application.</p>
+                    <p class="u-fontSize--large u-color--dustyGray u-textAlign--center u-lineHeight--normal u-marginBottom--more">Guides that share some best practices to following when running a Ship application.</p>
                     <a href="/docs/manage-state/" class="Button secondary">Get Started</a>
                 </div>
                 <div class="docs-list flex1">

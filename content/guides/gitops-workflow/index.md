@@ -1,11 +1,11 @@
 ---
 date: "2018-05-01T19:00:00Z"
-title: "Automated Deployment"
-description: "Automated Deployment"
-weight: "30003"
+title: "A GitOps Workflow"
+description: "A guide to building a GitOps workflow using Ship"
+weight: "30001"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "Deploying" ]
+categories: [ "deploying" ]
 index: "guides"
 ---
 

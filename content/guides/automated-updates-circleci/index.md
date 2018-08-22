@@ -2,9 +2,10 @@
 date: "2018-05-01T19:00:00Z"
 title: "Automated Updates with CircleCI"
 description: "Automated Updates with CircleCI"
-weight: "30003"
+weight: "30004"
 icon: "replicatedCircleCI"
 gradient: "greenToGreen"
+categories: [ "deploying" ]
 index: "guides"
 resources:
     - title: ".circleci/config.yaml"
