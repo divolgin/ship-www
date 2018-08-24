@@ -47,4 +47,7 @@ menu:
     - Name: "Guides"
       Weight: 2
       URL: "/guides"
+    - Name: "API Reference"
+      Weight: 3
+      URL: "/api"
 ---

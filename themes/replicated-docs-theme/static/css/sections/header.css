@@ -24,6 +24,12 @@ nav ul li a {
   display: inline-block;
   padding: 0;
 }
+nav ul ul {
+  border-top: 1px solid #ffffff;
+  padding-top: 10px;
+  margin-top: 16px;
+  display: none;
+}
 nav ul ul.show {
   display: block;
 }
@@ -41,7 +47,7 @@ nav ul ul.show {
   width: 14px;
 }
 .search-form {
-  display: flex;
+  display: flex !important;
   position: absolute;
   right: 0px;
   top: 10px;
@@ -51,7 +57,6 @@ nav ul ul.show {
   background: transparent;
   border: 0;
   border-bottom: 1px white solid;
-  width: 300px;
   color: white;
   line-height: 20px;
   outline: 0;
@@ -80,6 +85,7 @@ nav ul ul.show {
   background-position: -100px -175px;
   width: 20px;
   height: 20px;
+  margin-right: 20px;
   display: inline-block;
 }
 .search-form .algolia-autocomplete {
@@ -125,7 +131,7 @@ header {
   
   border-bottom: 10px solid #fff;
   top: -45px;
-  left: 103px;
+  left: 147px;
   position: absolute;
 }
 .guides-sub-nav .see-more {
@@ -140,9 +146,9 @@ header {
 
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
   .search-form input {
-    width: 250px;
+    width: 200px;
   }
   .guides-sub-nav {
     display: none !important;

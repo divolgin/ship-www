@@ -2,7 +2,7 @@
 date: "2018-03-03T04:02:20Z"
 title: "YAML Overview"
 description: "An overview of Ship"
-weight: "40003"
+weight: "203"
 categories: [ "Ship" ]
 index: "docs"
 icon: "replicatedShip"
