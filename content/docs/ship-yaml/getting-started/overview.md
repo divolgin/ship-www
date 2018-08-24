@@ -2,7 +2,7 @@
 date: "2018-03-03T04:02:20Z"
 title: "Ship Init Overview"
 description: "An overview of Ship Init"
-weight: "40002"
+weight: "202"
 categories: [ "Ship Init" ]
 index: "docs"
 aliases: [ /docs/ship-yaml/, /docs/ship-yaml/getting-started ]

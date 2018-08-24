@@ -6,6 +6,8 @@ description: Documentation for Ship YAML specs
 index: docs
 title: Ship YAML Reference
 weight: "13000"
+aliases: ["/api"]
+hideSidebar: true
 ---
 
 ## Ship

@@ -1,11 +1,7 @@
-{{ partial "headerWithSearch.html" . }}
+{{ partial "header.html" . }}
 <main>
-    <article class="single">
-            {{ if .Params.gradient }}
-                <div class="u-gradient--{{ .Params.gradient }} main-section header flex-column flex1 justifyContent--center">
-            {{ else }}
-                <div class="u-gradient--greenToGreen main-section header flex-column flex1 justifyContent--center">
-            {{ end }}
+    <article class="single api">
+        <div class="u-gradient--greenToGreen main-section header flex-column flex1 justifyContent--center">
             <div class="container">
                 <div class="paddingContainer">
                     <div class="flex flex-auto u-width--full justifyContent--spaceBetween alignItems--center u-marginTop--more">
@@ -30,13 +26,12 @@
             </div>
         </div>
         <div class="container">
-            <div class="paddingContainer">
-                <div class="u-flexTabletReflow flex1">
+                <div class="paddingContainer u-flexTabletReflow flex1">
+                    {{ if and .Params.categories (not .Params.hideSidebar) }}
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
                             <div>
-                                {{ if .Params.categories }}
-                                    <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ replace (index (.Params.categories) 0 | title) "-" " " }}</h3>
+                                <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ replace (index (.Params.categories) 0 | title) "-" " " }}</h3>
                                     <ul>
                                     {{ $currentPageTitle := .Title }}
                                     {{ with $taxonomy := (index (.Params.categories) 0) | urlize }}
@@ -51,16 +46,15 @@
                                         {{ end }}
                                     {{ end }}
                                     </ul>
-                                {{ end }}
                             </div>
                         </div>
                     </div>
-                    <div class="flex1 page-content-wrapper">
+                    {{ end }}
+                    <div class="flex1">
                         <div class="page-content">
                             {{ .Content }}
                         </div>
                     </div>
-                </div>
             </div>
         </div>
         <div>
