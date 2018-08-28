@@ -1,6 +1,6 @@
 ---
 categories:
-- ship-api-lifecycle
+- lifecycle
 date: 2018-01-17T23:51:55Z
 description: A `config` step will present the user with a screen to customize options as defined in your top-level `config` section.
 index: docs
@@ -9,7 +9,7 @@ weight: "100"
 gradient: "purpleToPink"
 ---
 
-[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle) 
+[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)
 
 ## config
 

@@ -1,6 +1,6 @@
 ---
 categories:
-- ship-api-assets
+- assets
 date: 2018-01-17T23:51:55Z
 description: A `github` asset is created from files downloaded from either a public or a linked Github repo.
 index: docs

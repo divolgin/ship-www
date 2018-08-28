@@ -1,15 +1,15 @@
 ---
 categories:
-- ship-api-config
+- config
 date: 2018-01-17T23:51:55Z
-description: Reference Documentation for defining your Ship application configuration options 
+description: Reference Documentation for defining your Ship application configuration options
 index: docs
 title: Config
 weight: "1"
 gradient: "purpleToPink"
 ---
 
-[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle) 
+[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)
 
 ## Ship Config
 

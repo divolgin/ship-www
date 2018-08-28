@@ -1,6 +1,6 @@
 ---
 categories:
-- ship-api-assets
+- assets
 date: 2018-01-17T23:51:55Z
 description: An `inline` asset is one that is specified directly in your Ship application's spec.
 index: docs
@@ -9,7 +9,7 @@ weight: "100"
 gradient: "purpleToPink"
 ---
 
-[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle) 
+[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)
 
 ## inline
 

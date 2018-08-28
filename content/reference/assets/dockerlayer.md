@@ -1,6 +1,6 @@
 ---
 categories:
-- ship-api-assets
+- assets
 date: 2018-01-17T23:51:55Z
 description: A `dockerlayer` asset will pull an image from a public docker registry, registry.replicated.com, or a configured third party registry and produce a tar archive of the container image.
 index: docs
@@ -9,7 +9,7 @@ weight: "100"
 gradient: "purpleToPink"
 ---
 
-[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle) 
+[Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)
 
 ## dockerlayer
 
