@@ -6,6 +6,7 @@ description: Reference Documentation for defining your Ship application configur
 index: docs
 title: Config
 weight: "1"
+hideFromList: true
 gradient: "purpleToPink"
 ---
 
