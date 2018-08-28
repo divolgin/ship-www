@@ -5,14 +5,7 @@
 # Directories
 node_modules/
 public/
-java/
-content/docs/reference/vendor-api/*.md
-content/docs/reference/vendor-api.md
-
-tmp_swagger.adoc
-swagger2markup-*.jar
 
 # Logs
 logs
 *.log
-   

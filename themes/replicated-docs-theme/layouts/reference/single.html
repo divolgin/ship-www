@@ -1,6 +1,6 @@
 {{ partial "header.html" . }}
 <main>
-    <article class="single">
+    <article class="single reference">
         <div class="u-gradient--greenToGreen main-section header flex-column flex1 justifyContent--center">
             <div class="container">
                 <div class="paddingContainer">
@@ -17,7 +17,7 @@
                         <div class="tags">
                             <ul>
                                 {{ range .Params.tags }}
-                                    <li> <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
+                                    <li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> </li>
                                 {{ end }}
                             </ul>
                         </div>
@@ -26,36 +26,35 @@
             </div>
         </div>
         <div class="container">
-            <div class="paddingContainer">
-                <div class="u-flexTabletReflow flex1">
+                <div class="paddingContainer u-flexTabletReflow flex1">
+                    {{ if and .Params.categories (not .Params.hideSidebar) }}
                     <div class="flex-auto sidebar-wrapper">
                         <div class="sidebar">
-                            <div class="toc u-marginBottom--most">
-                                <h3 class="u-fontWeight--medium u-lineHeight--normal u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ .Title }}</h3>
-								{{ .TableOfContents }}
-                            </div>
-
-                            {{ with .Params.resources }}
-                                <div class="resources">
-                                    <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">Resources</h3>
-                                    <p class="u-fontSize--small u-fontWeight--normal u-color--dustyGray u-marginTop--normal u-lineHeight--normal u-marginBottom--normal"> Here are some resources we've prepared for this guide.</p>
+                            <div>
+                                <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ replace (index (.Params.categories) 0 | title) "-" " " }}</h3>
                                     <ul>
-                                        {{ range . }}
-                                            <li> <a href="{{ .src | urlize }}" class="u-fontSize--small" download>{{ .title }}</a> </li>
+                                    {{ $currentPageTitle := .Title }}
+                                    {{ with $taxonomy := (index (.Params.categories) 0) | urlize }}
+                                        {{ range $index, $element := (index $.Site.Taxonomies.categories $taxonomy).Pages.ByWeight }}
+                                            {{ if not .Params.hideFromList }}
+                                                {{ if eq $currentPageTitle .Title  }}
+                                                    <li class="blue"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                                                {{ else }}
+                                                    <li><a href="{{ .RelPermalink }}" class="u-color--curiousBlue">{{ .Title }}</a></li>
+                                                {{ end }}
+                                            {{ end }}
                                         {{ end }}
+                                    {{ end }}
                                     </ul>
-                                </div>
-                            {{ end }}
+                            </div>
                         </div>
                     </div>
-                    <div class="flex1 page-content-wrapper">
-                        {{ with .Content }}
-                            <div class="page-content">
-                                {{ . | replaceRE "(<h[2-9] id=\"([^\"]+)\".+)(</h[2-9]+>)" "${1}&nbsp;<a class=\"headline-hash\" href=\"#${2}\">#</a> ${3}" | safeHTML }}
-                            </div>
-                        {{ end }}
+                    {{ end }}
+                    <div class="flex1">
+                        <div class="page-content">
+                            {{ .Content }}
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
         <div>
