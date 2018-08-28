@@ -1,3 +1,0 @@
-
-# Ship vs Continuous Delivery
-
