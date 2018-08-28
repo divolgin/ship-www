@@ -5,7 +5,6 @@ description: "Deploying and automating a Ship application using Spinnaker"
 weight: "30003"
 gradient: "greenToGreen"
 icon: "replicatedShip"
-categories: [ "Deploying" ]
 index: "guides"
 resources:
     - title: "ship_spec.yaml"

@@ -5,7 +5,6 @@ description: "The ship update command will merge the upstream application, keepi
 weight: "10006"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "learn" ]
 index: "guides"
 ---
 

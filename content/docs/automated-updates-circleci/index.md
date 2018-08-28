@@ -5,7 +5,6 @@ description: "Automated Updates with CircleCI"
 weight: "30004"
 icon: "replicatedCircleCI"
 gradient: "greenToGreen"
-categories: [ "deploying" ]
 index: "guides"
 resources:
     - title: ".circleci/config.yaml"

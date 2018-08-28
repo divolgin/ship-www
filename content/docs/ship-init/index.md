@@ -5,7 +5,6 @@ description: "The initial configuration of a Ship application is started using t
 weight: "10004"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "learn" ]
 index: "guides"
 ---
 

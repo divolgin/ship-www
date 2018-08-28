@@ -5,7 +5,6 @@ description: "A guide to building a GitOps workflow using Ship"
 weight: "30001"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "deploying" ]
 index: "guides"
 ---
 

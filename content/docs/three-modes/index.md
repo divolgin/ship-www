@@ -5,7 +5,6 @@ description: "Learn about the three modes of Ship: init, watch and update."
 weight: "10003"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "learn" ]
 index: "guides"
 ---
 

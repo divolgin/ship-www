@@ -5,7 +5,6 @@ description: "Using Weave Flux to deploy a Ship application"
 weight: "30002"
 gradient: "greenToGreen"
 icon: "replicatedShip"
-categories: [ "Deploying" ]
 index: "guides"
 resources:
     - title: "ship_spec.yaml"

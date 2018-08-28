@@ -5,7 +5,6 @@ description: "The ship watch command will wait for an update to be deployed to t
 weight: "10005"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
-categories: [ "learn" ]
 index: "guides"
 ---
 

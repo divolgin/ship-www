@@ -4,7 +4,6 @@ title: "Helm Charts"
 description: "Using Ship to configure and update a Helm chart"
 weight: "30003"
 gradient: "greenToGreen"
-categories: [ "upstream" ]
 index: "guides"
 ---
 
