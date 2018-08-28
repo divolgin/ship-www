@@ -33,7 +33,18 @@
                             <div>
                                 <h3 class="u-fontWeight--medium u-borderBottom--gray u-paddingBottom--normal u-marginBottom--normal">{{ replace (index (.Params.categories) 0 | title) "-" " " }}</h3>
                                     <ul>
-                                        <li>test</li>
+                                    {{ $currentPageTitle := .Title }}
+                                    {{ with $taxonomy := (index (.Params.categories) 0) | urlize }}
+                                        {{ range $index, $element := (index $.Site.Taxonomies.categories $taxonomy).Pages.ByWeight }}
+                                            {{ if not .Params.hideFromList }}
+                                                {{ if eq $currentPageTitle .Title  }}
+                                                    <li class="blue"><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                                                {{ else }}
+                                                    <li><a href="{{ .RelPermalink }}" class="u-color--curiousBlue">{{ .Title }}</a></li>
+                                                {{ end }}
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
                                     </ul>
                             </div>
                         </div>

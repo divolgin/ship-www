@@ -3,7 +3,7 @@ categories:
 - assets
 date: 2018-01-17T23:51:55Z
 description: Reference Documentation for defining your Ship application assets
-index: docs
+index: false
 title: Assets
 weight: "1"
 hideFromList: true
