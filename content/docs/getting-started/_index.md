@@ -6,5 +6,8 @@ weight: "10004"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
 index: "guides"
+hideFromList: true
+categories: ["gettingstarted"]
 ---
 
+This
