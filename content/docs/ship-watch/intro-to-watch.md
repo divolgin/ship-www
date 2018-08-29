@@ -6,5 +6,6 @@ description: "An Overview Of Ship Watch"
 weight: "100"
 index: ["docs"]
 gradient: "purpleToPink"
+draft: true
 ---
 

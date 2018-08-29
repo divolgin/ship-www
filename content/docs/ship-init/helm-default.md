@@ -5,6 +5,7 @@ description: "Ship default yaml for Helm charts"
 weight: "100"
 index: ["docs"]
 gradient: "purpleToPink"
+draft: true
 ---
 
 When Ship detects a Helm chart that doesn't have a `ship.yaml` present, Ship will apply a default ship.yaml to enable the `ship init` experience.

@@ -5,6 +5,7 @@ title: "Creating Patches"
 description: "Creating Patches Using Ship"
 weight: "100"
 index: ["docs"]
+draft: true
 gradient: "purpleToPink"
 ---
 
