@@ -1,5 +1,4 @@
 ---
-categories: ["init"]
 date: "2016-07-03T04:02:20Z"
 title: "Default Helm Chart ship.yaml"
 description: "Ship default yaml for Helm charts"

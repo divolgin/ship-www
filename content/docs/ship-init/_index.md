@@ -6,6 +6,6 @@ weight: "10004"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
 index: "guides"
-categories: ["init"]
+categories: ["Ship Init"]
 ---
 

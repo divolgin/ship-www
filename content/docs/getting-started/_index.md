@@ -7,7 +7,7 @@ gradient: "greenToGreen"
 icon: "replicatedCircle"
 index: "guides"
 hideFromList: true
-categories: ["gettingstarted"]
+categories: ["Getting Started"]
 ---
 
 This

@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 <main>
     <article class="single docs-page">
-        <div class="u-gradient--darkBlueToLavender main-section flex-column flex1 justifyContent--center">
+        <div class="u-gradient--greenToGreen main-section flex-column flex1 justifyContent--center">
             <div class="container u-marginTop--most">
                 <div class="paddingContainer">
                     <div class="flex flex-auto justifyContent--center u-marginTop--more">
@@ -10,7 +10,7 @@
                         </div>
                         <div class="flex-auto u-widthMobile--full">
                             <h3 class="u-color--white u-fontWeight--bold u-fontSize--header">{{ .Page.Title }}</h3>
-                            <p class="u-fontSize--normal u-fontWeight--medium u-color--white u-marginTop--small u-lineHeight--normal">Index of all of the documentation in this section.</p>
+                            <p class="u-fontSize--normal u-fontWeight--medium u-color--white u-marginTop--small u-lineHeight--normal">{{ .Description }}</p>
                         </div>
                     </div>
                 </div>
@@ -20,19 +20,25 @@
             <div class="container flex">
                 <div class="paddingContainer">
                     <ul class="docs-categories-list">
-                        {{ range .Site.Taxonomies.categories.gettingstarted }}
-                            {{ if not .Params.hideFromList }}
-                            <li>
-                                <div class="doc-block">
-                                    <p class="u-fontSize--largest u-fontWeight--medium u-color--tuna u-marginBottom--normal">{{ .Title }}</p>
-                                    <p class="u-fontSize--large u-color--dustyGray u-margin--none u-lineHeight--normal">{{ .Description }}</p>
-                                    <div class="u-marginTop--more">
-                                        <a class="u-color--curiousBlue u-fontWeight--medium view-docs-link u-position--relative" href='{{ .Permalink }}'>View docs</a>
+                      {{ range index $.Site.Taxonomies.categories }}
+                        {{ range $key, $value := . }}
+                          {{ if eq (urlize .Title) (urlize $.Title) }}
+                            {{ range $value.Pages }}
+                                {{ if not .Params.hideFromList }}
+                                <li>
+                                    <div class="doc-block">
+                                        <p class="u-fontSize--largest u-fontWeight--medium u-color--tuna u-marginBottom--normal">{{ .Title }}</p>
+                                        <p class="u-fontSize--large u-color--dustyGray u-margin--none u-lineHeight--normal">{{ .Description }}</p>
+                                        <div class="u-marginTop--more">
+                                            <a class="u-color--curiousBlue u-fontWeight--medium view-docs-link u-position--relative" href='{{ .Permalink }}'>View Doc</a>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                                {{ end }}
                             {{ end }}
+                          {{ end }}
                         {{ end }}
+                      {{ end }}
                     </ul>
                 </div>
             </div>

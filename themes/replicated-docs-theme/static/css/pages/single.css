@@ -428,6 +428,10 @@
   top: 4px;
 }
 
+.no-sidebar .page-content {
+  margin-left: 0;
+}
+
 @media screen and (min-width: 48em) {
   .page-content-wrapper {
     padding-right: 30px;
