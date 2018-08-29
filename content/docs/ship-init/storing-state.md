@@ -1,11 +1,13 @@
 ---
-date: "2018-05-01T19:00:00Z"
-title: "Managing State"
-description: "Best practices to securely store and maange state"
-weight: "30003"
-gradient: "greenToGreen"
-index: "guides"
+categories: ["init"]
+date: "2016-07-03T04:02:20Z"
+title: "Managing and Storing State"
+description: "Best Practices for Managing and Storing state.json"
+weight: "100"
+index: ["docs"]
+gradient: "purpleToPink"
 ---
+
 When a Replicated Ship application is initially configured, a state file is created and stored in `.ship/state.json`. This file contains all generated and manually entered values from the initial setup. When an upgrade is available for the application, the state file is read and applied to the new update. This is a useful way to install application updates.
 
 ## Secrets in State

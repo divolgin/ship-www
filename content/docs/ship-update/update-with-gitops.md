@@ -1,11 +1,11 @@
 ---
-date: "2018-05-01T19:00:00Z"
-title: "A GitOps Workflow"
-description: "A guide to building a GitOps workflow using Ship"
-weight: "30001"
-gradient: "greenToGreen"
-icon: "replicatedCircle"
-index: "guides"
+categories: ["update"]
+date: "2016-07-03T04:02:20Z"
+title: "Update With GitOps"
+description: "Updating with GitOps"
+weight: "100"
+index: ["docs"]
+gradient: "purpleToPink"
 ---
 
 Applications delivered in Replicated Ship can be deployed using automation instead of manually running installation scripts. It's possible to deploy the first release of an application completely automated, even to airgapped environments. The process to automate deployment of an application varies, depending on the automation tools used. This document defines the steps involved in automating the deployment of an on-prem application, with links to specific implementations, when possible.

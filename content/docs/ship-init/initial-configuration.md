@@ -1,10 +1,11 @@
 ---
-date: "2018-05-01T19:00:00Z"
-title: "Initial configuration"
-description: "Configuring an application for the first deployment"
-weight: "30003"
-gradient: "greenToGreen"
-index: "guides"
+categories: ["init"]
+date: "2016-07-03T04:02:20Z"
+title: "Initial Configuration"
+description: "Creating the Initial Configuration"
+weight: "100"
+index: ["docs"]
+gradient: "purpleToPink"
 ---
 
 When configuring and deploying a Ship application, it's common to create the initial configuration, then build a audited, workflow-driven process to automate the deployment and future updates. When initially configuring and deploying an unfamiliar application, it's helpful to start with some easy-to-use tools to help bootstrap the process.
