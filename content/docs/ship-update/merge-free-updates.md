@@ -6,5 +6,6 @@ description: "Merge-free Updates of Applications"
 weight: "100"
 index: ["docs"]
 gradient: "purpleToPink"
+draft: true
 ---
 

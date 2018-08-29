@@ -6,5 +6,6 @@ description: "Supported Upstream Application Types"
 weight: "100"
 index: ["docs"]
 gradient: "purpleToPink"
+draft: true
 ---
 
