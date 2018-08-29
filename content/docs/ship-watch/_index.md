@@ -6,5 +6,6 @@ weight: "10005"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
 index: "guides"
+categories: ["watch"]
 ---
 

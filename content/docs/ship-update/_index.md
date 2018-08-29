@@ -6,5 +6,6 @@ weight: "10006"
 gradient: "greenToGreen"
 icon: "replicatedCircle"
 index: "guides"
+categories: ["update"]
 ---
 
