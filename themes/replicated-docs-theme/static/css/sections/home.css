@@ -29,7 +29,7 @@
 .header-section .container:after {
     content: "";
     position: absolute;
-    display: block;
+    display: none;
     height: 100%;
     width: 200px;
     top: -60px;
@@ -184,6 +184,10 @@
 
 /* ≥ 768px */
 @media screen and (min-width: 48em) {
+    .header-section .container::before,
+    .header-section .container:after {
+        display: block;
+    }
     .header-section .static-terminal {
         display: none;
     }
