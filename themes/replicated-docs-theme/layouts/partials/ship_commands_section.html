@@ -1,0 +1,59 @@
+<section class="ship-commands-section u-position--relative">
+    <div class="container u-position--relative u-zIndex--2">
+        <div class="paddingContainer">
+            <h1 class="u-fontSize--jumbo u-lineHeight--more u-fontWeight--bold u-marginBottom--normal u-textAlign--center">
+                Ship is built to compliment any workflow
+            </h1>
+            <p class="u-fontSize--larger u-color--dustyGray u-textAlign--center u-lineHeight--more">
+                Replicated Ship is good for any workflow thanks to three powerful commands.
+            </p>
+            <div class="u-marginTop--most command-blocks-wrapper flex flexWrap--wrap justifyContent--center">
+                <div class="command-block-wrapper u-textAlign--center">
+                    <div class="command-block">
+                        <div class="command-block-illustration init"></div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Ship init</p>
+                        <p class="u-fontSize--normal u-fontWeight--medium u-color--dustyGray u-lineHeight--more u-marginBottom--thirty">Initialize an application by pulling in the chart and set up the base directory (generally run on a workstation).</p>
+                        <div class="u-paddingTop--thirty u-borderTop--gray">
+                            <ul>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Can pass in a GitHub repo (any helm, k8s, or knative repos have automatic support OR repo with a ship.yaml).</li>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Can pass in a replicated.app URI with customer-id & instance-id for private&nbsp;applications.</li>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Generates the state.json as well as base/overlay directories.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-block-wrapper u-textAlign--center">
+                    <div class="command-block">
+                        <div class="command-block-illustration watch"></div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Ship watch</p>
+                        <p class="u-fontSize--normal u-fontWeight--medium u-color--dustyGray u-lineHeight--more u-marginBottom--thirty">Observes an upstream repo or application for updates (best run as a CRD or in a cron type&nbsp;process).</p>
+                        <div class="u-paddingTop--thirty u-borderTop--gray">
+                            <ul>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Out of the box support for any public GitHub repo.</li>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Can pass in a replicated.app URI with customer-id & instance-id for private applications.</li>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Exits with status code 0 when an update is&nbsp;available.</li>
+                              <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Can trigger a CI job via a webhook.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-block-wrapper u-textAlign--center">
+                    <div class="command-block">
+                        <div class="command-block-illustration update"></div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Ship update</p>
+                        <p class="u-fontSize--normal u-fontWeight--medium u-color--dustyGray u-lineHeight--more u-marginBottom--thirty">Pull the latest from the upstream repo, consumes state.json to generate the deployable assets.</p>
+                        <div class="u-paddingTop--thirty u-borderTop--gray">
+                          <ul>
+                            <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Out of the box support for any public GitHub repo.</li>
+                            <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Can pass in a replicated.app URI with customer-id & instance-id for private applications.</li>
+                            <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Triggered by Ship watch.</li>
+                            <li class="u-fontSize--normal u-fontWeight--medium u-color--doveGray u-lineHeight--more">Generally preceded by a `clone` and followed by a pull request for review.</li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="commands-section-gradient"></div>
+</section>
