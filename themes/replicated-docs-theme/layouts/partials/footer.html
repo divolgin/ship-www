@@ -59,6 +59,21 @@
 		if (toggleMenu) {
 			toggleMenu.addEventListener("click", toggleMenuClass);
 		};
+
+    // Animate in text on scroll
+    var descriptions = document.getElementsByClassName("diagram-info");
+    if (descriptions.length) {
+      window.addEventListener("scroll", function() {
+        for (var index = 0; index < descriptions.length; index++) {
+          var element = descriptions[index];
+          if (element.classList.contains("show")) { continue; }
+          var clientRect = element.getBoundingClientRect();
+          if (clientRect.top < 500) {
+            element.classList.add("show");
+          }
+        }
+      })
+    }
 	</script>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
