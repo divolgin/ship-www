@@ -1,3 +1,6 @@
+.documentation-section-wrapper {
+  background-color: #ffffff;
+}
 .docs-ref-list .doc-ref-list-item {
   width: 100%;
   display: inline-block;
@@ -12,26 +15,30 @@
   box-shadow: 0 0 5px rgba(0,0,0,.16);
 }
 
-/* ≥ 568px */
-@media screen and (min-width: 35.5em) {
+/* ≥ 768px */
+@media screen and (min-width: 48em) {
+  .documentation-section-wrapper {
+    background: url("../../images/doc-ref-background@2x.png") no-repeat;
+    background-size: cover;
+  }
   .docs-ref-list .doc-ref-list-item {
-    width: 50%;
+    width: 48%;
   }
   .doc-ref {
     margin-right: 30px; 
   }
   .doc-ref-list-item:nth-child(2n) .doc-ref {
-    margin-right: 0;
+    margin-right: 30px;
   }
 }
 
-/* ≥ 768px */
-@media screen and (min-width: 48em) {
+/* ≥ 1024px */
+@media screen and (min-width: 64em) {
   .docs-ref-list .doc-ref-list-item {
     width: 33%;
   }
   .doc-ref {
-    margin-right: 30px;
+    margin-right: 30px; 
   }
   .doc-ref-list-item:nth-child(2n) .doc-ref {
     margin-right: 30px;

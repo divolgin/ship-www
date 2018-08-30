@@ -1,44 +1,47 @@
-<section class="header-section u-position--relative">
-    <div class="container flex-column u-marginTop--60 alignItems--center u-position--relative u-zIndex--2">
-        <div class="cube-logo"></div>
-        <h1 class="u-fontSize--header u-marginTop--normal u-fontWeight--bold u-lineHeight--normal">
-            Replicated Ship
-        </h1>
-        <p class="u-fontSize--larger u-color--dustyGray u-fontWeight--medium u-lineHeight--normal u-marginTop--small">
-            Deploy 3rd party applications through modern pipelines.
-        </p>
-        <div class="u-marginTop--thirty u-marginBottom--most">
-            <svg width="650px" height="285px" viewBox="0 0 650 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="terminal-window" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <path id="tpath-1"><animate attributeName="d" fill="freeze" from="m20,60 h0" to="m20,60 h1100" dur="3s" begin="0s"/></path>
-                    <path id="tpath-2"><animate attributeName="d" fill="freeze" from="m38,81 h1100" to="m38,81 h1100" dur="0s" begin="1.5s"/></path>
-                    <path id="tpath-3"><animate attributeName="d" fill="freeze" from="m38,102 h1100" to="m38,102 h1100" dur="0s" begin="2s"/></path>
-                    <path id="tpath-4"><animate attributeName="d" fill="freeze" from="m38,123 h1100" to="m38,123 h1100" dur="0s" begin="2.9s"/></path>
-                    <path id="tpath-5"><animate attributeName="d" fill="freeze" from="m38,142 h0" to="m38,142 h1100" dur="3s" begin="3s"/></path>
-                    <path id="tpath-6"><animate attributeName="d" fill="freeze" from="m38,165 h1100" to="m38,165 h1100" dur="0s" begin="4.5s"/></path>
-                    <path id="tpath-7"><animate attributeName="d" fill="freeze" from="m60,207 h1100" to="m60,207 h1100" dur="0s" begin="4.5s"/></path>
-                    <path id="tpath-8"><animate attributeName="d" fill="freeze" from="m38,249 h1100" to="m38,249 h1100" dur="0s" begin="4.5s"/></path>
-                    <rect fill="#4A4A4A" fill-rule="nonzero" x="0" y="0" width="650" height="285" rx="8"></rect>
-                    <path d="M8,0 L642,0 C646.418278,-8.11624501e-16 650,3.581722 650,8 L650,32 L0,32 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" fill="#717171" fill-rule="nonzero"></path>
-                    <text font-family="Monaco" font-size="14" font-weight="normal" line-spacing="21">
-                        <textPath xlink:href="#tpath-1" fill="#FFFFFF">$ ship init github.com/kubernetes/charts/mysql</textPath>
-                        <textPath xlink:href="#tpath-2" fill="#A1DDB2">Reading github.com/kubernetes/charts/mysql ...</textPath>
-                        <textPath xlink:href="#tpath-3" fill="#A1DDB2">Determining application type ...</textPath>
-                        <textPath xlink:href="#tpath-4" fill="#A1DDB2">Detected application type helm</textPath>
-                        <textPath xlink:href="#tpath-5" fill="#A1DDB2">...........................................</textPath>
-                        <textPath xlink:href="#tpath-6" fill="#A1DDB2">Assets are ready to deploy. You can run</textPath>
-                        <textPath xlink:href="#tpath-7" fill="#A1DDB2">kustomize build overlays/ship | kubectl apply -f -</textPath>
-                        <textPath xlink:href="#tpath-8" fill="#A1DDB2">to deploy the overlaid assets to your cluster.</textPath>
-                    </text>
-                    <circle fill="#9B9B9B" fill-rule="nonzero" cx="18" cy="16" r="6"></circle>
-                    <circle fill="#9B9B9B" fill-rule="nonzero" cx="40" cy="16" r="6"></circle>
-                    <circle fill="#9B9B9B" fill-rule="nonzero" cx="62" cy="16" r="6"></circle>
-                </g>
-            </svg>
+<section class="header-section u-position--relative u-overflow--hidden">
+    <div class="container flex-column u-marginTop--60 u-position--relative u-zIndex--2">
+        <div class="paddingContainer alignItems--center flex-column">
+            <div class="cube-logo"></div>
+            <h1 class="u-fontSize--header u-marginTop--normal u-fontWeight--bold u-lineHeight--more">
+                Replicated Ship
+            </h1>
+            <p class="u-fontSize--larger u-color--dustyGray u-fontWeight--medium u-lineHeight--more u-marginTop--small">
+                Deploy 3rd party applications through modern pipelines.
+            </p>
+            <div class="terminal-illustration-wrapper">
+                <svg class="animated-terminal" width="650px" height="285px" viewBox="0 0 650 285" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="terminal-window" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path id="tpath-1"><animate attributeName="d" fill="freeze" from="m20,60 h0" to="m20,60 h1100" dur="3s" begin="0s"/></path>
+                        <path id="tpath-2"><animate attributeName="d" fill="freeze" from="m38,81 h1100" to="m38,81 h1100" dur="0s" begin="1.5s"/></path>
+                        <path id="tpath-3"><animate attributeName="d" fill="freeze" from="m38,102 h1100" to="m38,102 h1100" dur="0s" begin="2s"/></path>
+                        <path id="tpath-4"><animate attributeName="d" fill="freeze" from="m38,123 h1100" to="m38,123 h1100" dur="0s" begin="2.9s"/></path>
+                        <path id="tpath-5"><animate attributeName="d" fill="freeze" from="m38,142 h0" to="m38,142 h1100" dur="3s" begin="3s"/></path>
+                        <path id="tpath-6"><animate attributeName="d" fill="freeze" from="m38,165 h1100" to="m38,165 h1100" dur="0s" begin="4.5s"/></path>
+                        <path id="tpath-7"><animate attributeName="d" fill="freeze" from="m60,207 h1100" to="m60,207 h1100" dur="0s" begin="4.5s"/></path>
+                        <path id="tpath-8"><animate attributeName="d" fill="freeze" from="m38,249 h1100" to="m38,249 h1100" dur="0s" begin="4.5s"/></path>
+                        <rect fill="#4A4A4A" fill-rule="nonzero" x="0" y="0" width="650" height="285" rx="8"></rect>
+                        <path d="M8,0 L642,0 C646.418278,-8.11624501e-16 650,3.581722 650,8 L650,32 L0,32 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" fill="#717171" fill-rule="nonzero"></path>
+                        <text font-family="Monaco" font-size="14" font-weight="normal" line-spacing="21">
+                            <textPath xlink:href="#tpath-1" fill="#FFFFFF">$ ship init github.com/kubernetes/charts/mysql</textPath>
+                            <textPath xlink:href="#tpath-2" fill="#A1DDB2">Reading github.com/kubernetes/charts/mysql ...</textPath>
+                            <textPath xlink:href="#tpath-3" fill="#A1DDB2">Determining application type ...</textPath>
+                            <textPath xlink:href="#tpath-4" fill="#A1DDB2">Detected application type helm</textPath>
+                            <textPath xlink:href="#tpath-5" fill="#A1DDB2">...........................................</textPath>
+                            <textPath xlink:href="#tpath-6" fill="#A1DDB2">Assets are ready to deploy. You can run</textPath>
+                            <textPath xlink:href="#tpath-7" fill="#A1DDB2">kustomize build overlays/ship | kubectl apply -f -</textPath>
+                            <textPath xlink:href="#tpath-8" fill="#A1DDB2">to deploy the overlaid assets to your cluster.</textPath>
+                        </text>
+                        <circle fill="#9B9B9B" fill-rule="nonzero" cx="18" cy="16" r="6"></circle>
+                        <circle fill="#9B9B9B" fill-rule="nonzero" cx="40" cy="16" r="6"></circle>
+                        <circle fill="#9B9B9B" fill-rule="nonzero" cx="62" cy="16" r="6"></circle>
+                    </g>
+                </svg>
+                <div class="static-terminal"></div>
+            </div>
+            <p class="u-fontSize--larger u-color--tundora u-fontWeight--medium u-lineHeight--more u-textAlign--center">
+                Replicated Ship enables the operation of third-party applications through modern software deployment pipelines. Replicated Ship is a CLI and configuration tool that prepares workflows to enable deploying and updating of Helm charts, Kubernetes applications and other 3rd-party&nbsp;software.
+            </p>
         </div>
-        <p class="u-fontSize--larger u-color--tundora u-fontWeight--medium u-lineHeight--more u-textAlign--center">
-            Replicated Ship enables the operation of third-party applications through modern software deployment pipelines. Replicated Ship is a CLI and configuration tool that prepares workflows to enable deploying and updating of Helm charts, Kubernetes applications and other 3rd-party software.
-        </p>
     </div>
     <div class="section-header-white-gradient"></div>
 </section>

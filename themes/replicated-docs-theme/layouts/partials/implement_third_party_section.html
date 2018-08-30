@@ -1,29 +1,35 @@
 <section class="implement-3rd-party-section">
     <div class="container">
-        <h1 class="u-fontSize--jumbo u-fontWeight--bold u-marginBottom--normal u-textAlign--center">
-            Reduce operational overhead of maintaining 3rd-party applications
-        </h1>
-        <p class="u-fontSize--larger u-color--dustyGray u-textAlign--center u-lineHeight--more">
-            It’s never been easier to configure and deploy 3rd-party k8s applications.
-        </p>
-        <div class="u-marginTop--most flex justifyContent--center">
-            <div class="overhead-diagram-wrapper u-position--relative">
-                <div class="diagram-info one">
-                    <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Pull in the chart you want</p>
-                    <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Begin by pulling in the chart from the upstream maintainer which will include the default <code>values.yaml</code> file.</p>
-                </div>
-                <div class="diagram-info two">
-                    <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Flexible installation</p>
-                    <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Add your custom values to the <code>values.yaml</code> that make it possible for your application to run.</p>
-                    <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more u-marginTop--normal">These values will override the defaults in the upstream chart and your base directory is created.</p>
-                </div>
-                <div class="diagram-info three">
-                    <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Write your patch file</p>
-                    <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Patches give you the flexibility to overrite any values from the upstream chart. Say good bye to templating.</p>
-                </div>
-                <div class="diagram-info four">
-                    <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Let Kustomize do the hard work</p>
-                    <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Replicated Ship + Kustomize does the heavy lifting to merge your patch, and generate your Kubernetes YAML.</p>
+        <div class="paddingContainer">
+            <h1 class="u-fontSize--jumbo u-lineHeight--more u-fontWeight--bold u-marginBottom--normal u-textAlign--center">
+                Reduce operational overhead of maintaining 3rd-party applications
+            </h1>
+            <p class="u-fontSize--larger u-color--dustyGray u-textAlign--center u-lineHeight--more">
+                It’s never been easier to configure and deploy 3rd-party k8s applications.
+            </p>
+            <div class="u-marginTop--most flex justifyContent--center">
+                <div class="overhead-diagram-wrapper u-position--relative">
+                    <div class="diagram-info one">
+                        <div class="step-number">1</div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Pull in the chart you want</p>
+                        <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Begin by pulling in the chart from the upstream maintainer which will include the default <code>values.yaml</code> file.</p>
+                    </div>
+                    <div class="diagram-info two">
+                        <div class="step-number">2</div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Flexible installation</p>
+                        <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Add your custom values to the <code>values.yaml</code> that make it possible for your application to run.</p>
+                        <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more u-marginTop--normal">These values will override the defaults in the upstream chart and your base directory is created.</p>
+                    </div>
+                    <div class="diagram-info three">
+                        <div class="step-number">3</div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Write your patch file</p>
+                        <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Patches give you the flexibility to overrite any values from the upstream chart. Say good bye to templating.</p>
+                    </div>
+                    <div class="diagram-info four">
+                        <div class="step-number">4</div>
+                        <p class="u-fontSize--large u-color--tuna u-fontWeight--bold u-marginBottom--normal">Let Kustomize do the hard work</p>
+                        <p class="u-fontSize--normal u-color--dustyGray u-lineHeight--more">Replicated Ship + Kustomize does the heavy lifting to merge your patch, and generate your Kubernetes YAML.</p>
+                    </div>
                 </div>
             </div>
         </div>
