@@ -6,8 +6,8 @@ description: Reference Documentation for defining your Ship application lifecycl
 index: false
 title: Lifecycle
 weight: "1"
-gradient: "purpleToPink"
 hideFromList: true
+gradient: "purpleToPink"
 ---
 
 [Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)

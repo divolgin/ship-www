@@ -56,7 +56,7 @@ It also populates a template function `AmazonEKS` that takes the name of the clu
   - `zones` - The availability zones to create subnets within
 
 
-- `dest` - The path within `terraform/` to place the generated file. Defaults to `amazon_eks.tf`
+- `dest` - The path within `installer/` to place the generated file. Defaults to `amazon_eks.tf`
 
 
 - `existing_vpc` - The existing VPC to use for the EKS cluster
@@ -94,10 +94,10 @@ assets:
             - xyz789-2
         autoscaling_groups:
           - name: group1
-            group_size: 2
+            group_size: '2'
             machine_type: m5.large
           - name: group2
-            group_size: 1
+            group_size: '1'
             machine_type: t2.large
 ```
 
@@ -120,6 +120,6 @@ assets:
             - 10.0.130.0/24
         autoscaling_groups:
           - name: firstgroup
-            group_size: 3
+            group_size: '3'
             machine_type: m5.large
 ```
