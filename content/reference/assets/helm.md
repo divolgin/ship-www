@@ -70,6 +70,9 @@ A `helm` asset will template and render an existing helm chart. You can either r
 - `values` - Values to set during rendering, overrides defaults in `values.yaml` if present in the chart root.
 
 
+- `values_from` - values_from
+
+
 - `when` - This asset will be included when 'when' is omitted or true
 
 
