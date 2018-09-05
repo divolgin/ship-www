@@ -33,6 +33,7 @@
     height: 100%;
     width: 200px;
     top: -60px;
+    z-index: -1;
 }
 .header-section .container::after {
     background: rgb(255,255,255);
