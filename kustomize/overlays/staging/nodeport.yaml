@@ -8,7 +8,7 @@ spec:
   type: NodePort
   ports:
   - name: http
-    nodePort: 38065
+    nodePort: 30065
     port: 3000
     targetPort: http
   selector:
