@@ -8,22 +8,18 @@ environment: &environment
     DST_DIR: /tmp/built
   working_directory: /tmp/src
 
-defaults: &defaults
-  <<: *environment
-  docker:
-    - image: circleci/node:8.9.4
-
 defaults_py: &defaults_py
   <<: *environment
   docker:
     - image: circleci/python:2
 
-setup_steps: &setup_steps
-  command: |
-    sudo apt-get install python-pip python-dev build-essential
-    sudo npm install -g npm@6.x.x
-    sudo npm install -g grunt-cli
-    yarn install
+defaults_gitops: &defaults_gitops
+  <<: *environment
+  docker:
+  - image: replicated/replicated-work:node8-go11
+    auth:
+      username: $DOCKERHUB_USER
+      password: $DOCKERHUB_PASSWORD
 
 hugo_setup_steps: &hugo_setup_steps
   command: |
@@ -32,7 +28,15 @@ hugo_setup_steps: &hugo_setup_steps
     tar xzvf hugo_0.46_Linux-64bit.tar.gz
     sudo mv hugo /usr/bin/hugo
 
+check_upstream_steps: &check_upstream_steps
+  command: |
+    if [ "${CIRCLE_PROJECT_USERNAME}" != "replicatedhq" ]; then
+      echo Unable to deploy, the project is currently on a fork.
+      exit 1
+    fi
+
 jobs:
+
   build_staging:
     <<: *defaults_py
     steps:
@@ -143,8 +147,92 @@ jobs:
                 tf-api-production ${PROJECT_NAME}
             fi
 
+  deploy_staging_eks:
+    <<: *defaults_gitops
+    steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: check_upstream
+        <<: *check_upstream_steps
+    - run:
+        name: Setup Staging
+        <<: *hugo_setup_steps
+    - add_ssh_keys:
+        fingerprints:
+        - "25:51:68:66:6d:12:c7:84:f4:18:97:6a:7c:2e:f8:3d"
+    - run:
+        name: Build Staging
+        command: |
+          rm -rf ./.git
+          mkdir ${DST_DIR}
+          hugo -s ${SRC_DIR} -d ${DST_DIR} -b "https://ship.staging.replicated.com/"
+          cd ..
+          cp ${SRC_DIR}/build/* ./
+          cp -r ${SRC_DIR}/kustomize ./
+
+          export WORKDIR=`pwd`
+          export DOCKERFILE=./Dockerfile
+          export ECR_REPO=923411875752.dkr.ecr.us-east-1.amazonaws.com
+          build-docker
+
+          export AWS_ACCESS_KEY_ID=$STAGING_AWS_ACCESS_KEY_ID
+          export AWS_SECRET_ACCESS_KEY=$STAGING_AWS_SECRET_ACCESS_KEY
+          push-docker
+
+          export OVERLAY_PATH=kustomize/overlays/staging
+          export GITOPS_BRANCH=master
+          deploy
+
+  deploy_production_eks:
+    <<: *defaults_gitops
+    steps:
+    - checkout
+    - setup_remote_docker
+    - run:
+        name: check_upstream
+        <<: *check_upstream_steps
+    - run:
+        name: Setup Staging
+        <<: *hugo_setup_steps
+    - add_ssh_keys:
+        fingerprints:
+        - "25:51:68:66:6d:12:c7:84:f4:18:97:6a:7c:2e:f8:3d"
+    - run:
+        name: Build Staging
+        command: |
+          rm -rf ./.git
+          mkdir ${DST_DIR}
+          hugo -s ${SRC_DIR} -d ${DST_DIR} -b "https://ship.replicated.com/"
+          cd ..
+          cp ${SRC_DIR}/build/* ./
+          cp -r ${SRC_DIR}/kustomize ./
+
+          export WORKDIR=`pwd`
+          export DOCKERFILE=./Dockerfile
+          export ECR_REPO=799720048698.dkr.ecr.us-east-1.amazonaws.com
+          build-docker
+
+          export AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
+          export AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
+          push-docker
+
+          export OVERLAY_PATH=kustomize/overlays/production
+          export GITOPS_BRANCH=release
+          deploy
+
 workflows:
   version: 2
+  deploy_eks:
+    jobs:
+    - deploy_staging_eks:
+        filters:
+          branches:
+            only: master
+    - deploy_production_eks:
+        filters:
+          branches:
+            only: release
   build_accept_deploy:
     jobs:
       - build_staging:
