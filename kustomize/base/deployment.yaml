@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ship-www
+spec:
+  selector:
+    matchLabels:
+      app: ship-www
+  template:
+    metadata:
+      labels:
+        app: ship-www
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: ship-www
+          image: gcr.io/replicated-qa/ship-www
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 2
+            periodSeconds: 2
