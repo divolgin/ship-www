@@ -8,11 +8,6 @@ environment: &environment
     DST_DIR: /tmp/built
   working_directory: /tmp/src
 
-defaults_py: &defaults_py
-  <<: *environment
-  docker:
-    - image: circleci/python:2
-
 defaults_gitops: &defaults_gitops
   <<: *environment
   docker:
@@ -36,116 +31,6 @@ check_upstream_steps: &check_upstream_steps
     fi
 
 jobs:
-
-  build_staging:
-    <<: *defaults_py
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Setup Staging
-          <<: *hugo_setup_steps
-      - run:
-          name: Build Staging
-          command: |
-            pip install awscli --upgrade --user
-
-            rm -rf ./.git
-            mkdir ${DST_DIR}
-            hugo -s ${SRC_DIR} -d ${DST_DIR} -b "https://ship.staging.replicated.com/"
-            cd ..
-            cp ${SRC_DIR}/build/* ./
-            docker build -t ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} .
-
-            export AWS_ACCESS_KEY_ID=$STAGING_AWS_ACCESS_KEY_ID
-            export AWS_SECRET_ACCESS_KEY=$STAGING_AWS_SECRET_ACCESS_KEY
-            $(/home/circleci/.local/bin/aws ecr get-login --no-include-email --region us-east-1)
-            docker tag ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} 923411875752.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7}
-            docker push 923411875752.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7}
-            docker tag ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} 923411875752.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:latest
-            docker push 923411875752.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:latest
-
-  build_production:
-    <<: *defaults_py
-    steps:
-      - checkout
-      - setup_remote_docker
-      - run:
-          name: Setup Production
-          <<: *hugo_setup_steps
-      - run:
-          name: Build Production
-          command: |
-            pip install awscli --upgrade --user
-
-            rm -rf ./.git
-            mkdir ${DST_DIR}
-            hugo -s ${SRC_DIR} -d ${DST_DIR} -b "https://ship.replicated.com/"
-            cd ..
-            cp ${SRC_DIR}/build/* ./
-            docker build -t ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} .
-
-            export AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
-            export AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
-            $(/home/circleci/.local/bin/aws ecr get-login --no-include-email --region us-east-1)
-            docker tag ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} 799720048698.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7}
-            docker push 799720048698.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7}
-            docker tag ${PROJECT_NAME}:${CIRCLE_SHA1:0:7} 799720048698.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:latest
-            docker push 799720048698.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:latest
-
-  deploy_staging:
-    <<: *defaults_py
-    steps:
-      - setup_remote_docker
-      - deploy:
-          name: Maybe deploy staging
-          command: |
-            set -vu
-            if [ "${CIRCLE_PROJECT_USERNAME}" == "replicatedhq" ]; then
-              pip install awscli --upgrade --user
-
-              export AWS_ACCESS_KEY_ID=$STAGING_AWS_ACCESS_KEY_ID
-              export AWS_SECRET_ACCESS_KEY=$STAGING_AWS_SECRET_ACCESS_KEY
-              $(/home/circleci/.local/bin/aws ecr get-login --no-include-email --region us-east-1)
-
-              docker run -it \
-                -e AWS_ACCESS_KEY_ID=$STAGING_AWS_ACCESS_KEY_ID \
-                -e AWS_SECRET_ACCESS_KEY=$STAGING_AWS_SECRET_ACCESS_KEY \
-                923411875752.dkr.ecr.us-east-1.amazonaws.com/deployer:latest \
-                ecs \
-                deploy \
-                --timeout 1200 \
-                -i ${PROJECT_NAME} 923411875752.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7} \
-                --region us-east-1 \
-                tf-api-staging ${PROJECT_NAME}
-            fi
-
-  deploy_production:
-    <<: *defaults_py
-    steps:
-      - setup_remote_docker
-      - deploy:
-          name: Maybe deploy production
-          command: |
-            set -vu
-            if [ "${CIRCLE_PROJECT_USERNAME}" == "replicatedhq" ]; then
-              pip install awscli --upgrade --user
-
-              export AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
-              export AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
-              $(/home/circleci/.local/bin/aws ecr get-login --no-include-email --region us-east-1)
-
-              docker run -it \
-                -e AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID \
-                -e AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY \
-                799720048698.dkr.ecr.us-east-1.amazonaws.com/deployer:latest \
-                ecs \
-                deploy \
-                --timeout 1200 \
-                -i ${PROJECT_NAME} 799720048698.dkr.ecr.us-east-1.amazonaws.com/${PROJECT_NAME}:${CIRCLE_SHA1:0:7} \
-                --region us-east-1 \
-                tf-api-production ${PROJECT_NAME}
-            fi
 
   deploy_staging_eks:
     <<: *defaults_gitops
@@ -233,25 +118,3 @@ workflows:
         filters:
           branches:
             only: release
-  build_accept_deploy:
-    jobs:
-      - build_staging:
-          filters:
-            branches:
-              only: master
-      - build_production:
-          filters:
-            branches:
-              only: release
-      - deploy_staging:
-          requires:
-            - build_staging
-          filters:
-            branches:
-              only: master
-      - deploy_production:
-          requires:
-            - build_production
-          filters:
-            branches:
-              only: release
