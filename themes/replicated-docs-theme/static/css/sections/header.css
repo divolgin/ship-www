@@ -11,7 +11,8 @@ nav {
 }
 
 nav ul li {
-  display: block;
+  display: inline-block;
+  margin-right: 20px;
 }
 nav ul li a {
   color: #ffffff;
@@ -24,7 +25,7 @@ nav ul li a {
   display: inline-block;
   padding: 0;
 }
-nav ul ul {
+/* nav ul ul {
   border-top: 1px solid #ffffff;
   padding-top: 10px;
   margin-top: 16px;
@@ -32,11 +33,9 @@ nav ul ul {
 }
 nav ul ul.show {
   display: block;
-}
+} */
 #toggleNav {
-  position: absolute;
-  right: 20px;
-  top: 13px;
+  margin-left: 20px;
   z-index: 210;
   background-position: -70px -4px;
   width: 23px;
@@ -46,14 +45,7 @@ nav ul ul.show {
   background-position: -97px -4px;
   width: 14px;
 }
-.search-form {
-  display: flex !important;
-  position: absolute;
-  right: 0px;
-  top: 10px;
-}
 .search-form input {
-  margin-right: 20px;
   background: transparent;
   border: 0;
   border-bottom: 1px white solid;
@@ -79,13 +71,12 @@ nav ul ul.show {
   cursor: pointer;
 }
 .searchIcon--white {
-  background-image: url(../../images/main_spritesheet.svg);
+  background-image: url("../../images/main_spritesheet.svg");
   background-repeat: no-repeat;
   background-size: initial;
   background-position: -100px -175px;
   width: 20px;
   height: 20px;
-  margin-right: 20px;
   display: inline-block;
 }
 .search-form .algolia-autocomplete {
@@ -168,7 +159,6 @@ header {
     background: #75d580;
   }
   nav ul li {
-    display: inline-block;
     vertical-align: middle;
     padding: 0;
     margin-right: 30px;

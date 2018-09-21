@@ -44,27 +44,36 @@
 			<nav class="other-nav">
 		{{ end }}
 			<div class="container u-position--relative">
-				<span id="toggleNav" class="u-show--mobileTablet icon u-cursor--pointer"></span>
-				<ul class="justifyContent-flexStart alignItems--center nav-list paddingContainer u-position--relative">
-					<li>
-						<a class="logo-link" href="{{ .Site.BaseURL }}">
-							<img width="109" src="{{ .Site.BaseURL }}images/ship-logo@2x.png"/>
-						</a>
-					</li>
-					<li>
-						<ul id="headerLinks" class="header-links">
-							{{ range .Site.Menus.main }}
-								<li><a href="{{ .URL | relURL }}" id="navItem--{{ .Name | urlize }}">{{ .Name }}</a></li>
-							{{ end }}
-							<li>
-								<div class="search-form">
-									<input type="text" placeholder="What are you looking for?" id="search-field" style="display: none;" />
-									<span class="searchIcon--white" id="desktop-search"></span>
-								</div>
-							</li>
-						</ul>
-					</li>
-				</ul>
+				<div class="flex flex1 paddingContainer u-position--relative">
+					<ul class="flex1 flex justifyContent--flexStart alignItems--center nav-list">
+						<li>
+							<a class="logo-link" href="{{ .Site.BaseURL }}">
+								<img width="109" src="{{ .Site.BaseURL }}images/ship-logo@2x.png"/>
+							</a>
+						</li>
+						<li>
+							<ul id="headerLinks" class="header-links">
+								{{ range .Site.Menus.main }}
+									<li><a href="{{ .URL | relURL }}" id="navItem--{{ .Name | urlize }}">{{ .Name }}</a></li>
+								{{ end }}
+							</ul>
+						</li>
+					</ul>
+					<ul class="flex1 flex justifyContent--flexEnd alignItems--center nav-list">
+						<li>
+							<div class="search-form">
+								<input type="text" placeholder="What are you looking for?" id="search-field" style="display: none;" />
+								<span class="searchIcon--white" id="desktop-search"></span>
+							</div>
+						</li>
+						<li>
+							<a class="log-in-link" href="/login">Login</a>
+						</li>
+						<li>
+								<span id="toggleNav" class="u-show--mobileTablet icon u-cursor--pointer"></span>
+						</li>
+					</ul>
+				</div>
 			</div>
 			<div class="container u-position--relative">
 				{{ partial "guides_sub_nav.html" }}
