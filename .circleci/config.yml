@@ -11,7 +11,7 @@ environment: &environment
 defaults_gitops: &defaults_gitops
   <<: *environment
   docker:
-  - image: replicated/gitops-buidler:node8-go11
+  - image: replicated/gitops-builder:node8-go11
 
 hugo_setup_steps: &hugo_setup_steps
   command: | 
