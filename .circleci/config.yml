@@ -11,13 +11,10 @@ environment: &environment
 defaults_gitops: &defaults_gitops
   <<: *environment
   docker:
-  - image: replicated/replicated-work:node8-go11
-    auth:
-      username: $DOCKERHUB_USER
-      password: $DOCKERHUB_PASSWORD
+  - image: replicated/gitops-buidler:node8-go11
 
 hugo_setup_steps: &hugo_setup_steps
-  command: |
+  command: | 
     cd /tmp
     wget https://github.com/gohugoio/hugo/releases/download/v0.46/hugo_0.46_Linux-64bit.tar.gz
     tar xzvf hugo_0.46_Linux-64bit.tar.gz
@@ -117,4 +114,4 @@ workflows:
     - deploy_production_eks:
         filters:
           branches:
-            only: release
+            only: master
