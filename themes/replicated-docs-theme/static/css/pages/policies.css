@@ -1,0 +1,51 @@
+.PolicyPage {
+  padding-top: 100px;
+  padding-bottom: 30px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.PolicyPage h3 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #323232;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+.PolicyPage h4 {
+  font-size: 26px;
+  font-weight: 500;
+  color: #323232;
+  line-height: 1;
+  margin: 20px 0;
+}
+.PolicyPage p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 22px;
+  padding: 10px 0;
+}
+.PolicyPage a {
+  color: #337AB7;
+  font-weight: 500;
+}
+.PolicyPage a:hover {
+  text-decoration: underline;
+}
+
+.PolicyPage ul {
+  margin: 0 0 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+
+.PolicyPage ul li {
+  list-style-type: disc;
+  line-height: 22px;
+  margin-top: 10px;
+}
+
+.PolicyPage ul li b {
+  font-weight: 700;
+}
