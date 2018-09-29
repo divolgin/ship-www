@@ -24,6 +24,7 @@ Kustomize adds an interactive step for last-mile customization of kubernetes YAM
 lifecycle:
   v1:
     - kustomize:
-        base_path: ./k8s/base
-        dest: ./k8s/overlays/production
+        base: ./k8s/base
+        overlay: ./overlays/production
+        dest: ./rendered.yaml
 ```

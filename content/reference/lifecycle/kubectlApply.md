@@ -2,18 +2,18 @@
 categories:
 - lifecycle
 date: 2018-01-17T23:51:55Z
-description: A `kubectl_apply` step will run `kubectl apply` with the provided file path and kubeconfig.
+description: A `kubectlApply` step will run `kubectl apply` with the provided file path and kubeconfig.
 index: docs
-title: kubectl_apply
+title: kubectlApply
 weight: "100"
 gradient: "purpleToPink"
 ---
 
 [Assets](/api/ship-assets/assets) | [Config](/api/ship-config/config) | [Lifecycle](/api/ship-lifecycle/lifecycle)
 
-## kubectl_apply
+## kubectlApply
 
-A `kubectl_apply` step will run `kubectl apply` with the provided file path and kubeconfig.
+A `kubectlApply` step will run `kubectl apply` with the provided file path and kubeconfig.
 
 
 
@@ -37,14 +37,14 @@ A `kubectl_apply` step will run `kubectl apply` with the provided file path and 
 ```yaml
 lifecycle:
   v1:
-    - kubectl_apply:
+    - kubectlApply:
         path: config.yml
 ```
 
 ```yaml
 lifecycle:
   v1:
-    - kubectl_apply:
+    - kubectlApply:
         path: k8s/another.yml
         kubeconfig: k8s/generated_kubeconfig
 ```
@@ -52,7 +52,7 @@ lifecycle:
 ```yaml
 lifecycle:
   v1:
-    - kubectl_apply:
+    - kubectlApply:
         path: k8s/another.yml
         kubeconfig: '{{repl AmazonEKS "eks_cluster_name" }}'
 ```
