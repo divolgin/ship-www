@@ -3,8 +3,32 @@ kind: Deployment
 metadata:
   name: ship-www
 spec:
+  replicas: 3
   template:
     spec:
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - ship-cloud-api
+              topologyKey: "kubernetes.io/hostname"
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 2
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - ship-www
+              topologyKey: "kubernetes.io/hostname"
       containers:
         - name: ship-www
           image: 799720048698.dkr.ecr.us-east-1.amazonaws.com/ship-www
