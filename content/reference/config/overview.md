@@ -11,7 +11,7 @@ gradient: "purpleToPink"
 hideFromList: true
 ---
 
-[Assets](/reference/assets/overview) | [Config](/reference/config/overview) | [Lifecycle](/referenc/lifecycle/overview)
+[Assets](/reference/assets/overview) | [Config](/reference/config/overview) | [Lifecycle](/reference/lifecycle/overview)
 
 Ship includes a powerful mechanism for collecting high-level configuration from cluster operators and other application end-users. At its core, ship configuration encompasses two pieces:
 
