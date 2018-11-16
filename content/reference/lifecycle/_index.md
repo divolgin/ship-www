@@ -10,7 +10,7 @@ hideFromList: true
 gradient: "purpleToPink"
 ---
 
-[Assets](/reference/assets/overview) | [Config](/reference/config/overview) | [Lifecycle](/referenc/lifecycle/overview)
+[Assets](/reference/assets/overview) | [Config](/reference/config/overview) | [Lifecycle](/reference/lifecycle/overview)
 
 ## Ship Lifecycle
 
